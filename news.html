@@ -4,65 +4,33 @@
 
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="../css/public.css">
-    <link rel="stylesheet" href="../css/companyInfo.css">
-    <link rel="stylesheet" href="../Libs/bootstrap/dist/css/bootstrap.min.css">
-    <style>
-        .investor-nav {
-            width: 120px;
-            min-height: 140px;
-            background: #ececec;
-            padding-top: 6px;;
-            position: fixed;
-            /*top:150px;*/
-        }
-        .investor-nav li {
-            width: 120px;
-            height: 35px;
-            margin-left: -40px;
-            /*margin-right: auto;*/
-            line-height: 35px;
-            text-align: center;
-            list-style: none;
-            margin-top: 5px;
-        }
-        .investor-nav li:hover{
-            background: #ff9326;
-        }
-        .investor-nav a {
-            /*width: 120px;*/
-            /*height: 35px;*/
-            color: #2C3E50;
-            text-decoration: none;
-        }
-        .investor-nav a:hover {
-            cursor: pointer;
-            /*background: #ffa54a;*/
-            text-decoration: none;
-        }
-    </style>
-    <script src="../Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="Libs/bootstrap/dist/css/bootstrap.min.css">
+    <script src="Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
     <script>
         $(function(){
             var slideup = $('#slideup');
-            slideup.fadeOut(1);
+            slideup.fadeOut(100);
             slideup.on('click',function(){//返回顶部
                 $('html,body').animate({
                     scrollTop: '0px'
                 }, 300);
                 return false;
             })
+            var div = $('.container .section-commen');
+            div.each(function(){
+                $(this).find('li').last().css('border','none');
+            })
             $(window).scroll(function(){
                 var top = $(document).scrollTop()
                 if(top >= 150){
-                    $('.investor-nav').css('top','0');
+                    $('.news-nav').css('top','0');
                     slideup.fadeIn(300);
                 }else{
-                    $('.investor-nav').css('top',170);
+                    $('.news-nav').css('top',170);
                     slideup.fadeOut(300);
                 }
-                var a = $('.investor-nav').find('a');
+                var a = $('.news-nav').find('a');
                 function setValue(Element,num){
                     Element.each(function(){
                         var id = $(this).data('id');
@@ -74,8 +42,8 @@
                         }
                     })
                 }
-                if(top >100){
-                   setValue(a,1);
+                if(top >200){
+                    setValue(a,1);
                 }
                 if(top >=400){
                     setValue(a,2);
@@ -83,19 +51,16 @@
                 if(top >=800){
                     setValue(a,3);
                 }
-                if(top >=1100){
-                    setValue(a,4);
-                }
 
             })
-
         })
-    </script>    <title></title>
+    </script>
+    <title></title>
 </head>
 <body>
 <div class="global-nav">
     <div class="container">
-        <div class="hadlink-logo"><a href="index.html"><img src="../images/hadlinkLOGO.png"></a> </div>
+        <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
         <div class="nav-bar" style="margin-left: 50px;">
             <ul>
                 <li style="width: 120px; ">
@@ -111,7 +76,7 @@
                         <li ><a href="companyInfo.html#coreGroup" >核心团队</a></li>
                     </ul>
                 </li>
-                <li style="width: 120px;">
+                <li style="width: 120px;border-bottom:5px solid #ff9326;">
                     <a href="news.html" id="news">新闻中心</a>
                     <ul class="company-tab" style="height: 140px;padding-top: 10px;" >
                         <li><a href="news.html#companyNews" > 公司新闻</a></li>
@@ -143,7 +108,7 @@
                     </ul>
                 </li>
 
-                <li style="width: 120px;border-bottom:5px solid #ff9326;">
+                <li style="width: 120px;">
                     <a href="investor.html">投资者关系</a>
                     <ul class="company-tab" style="height: 140px;padding-top: 10px;" >
                         <li ><a href="investor.html#corporateNotice" > 投资章程</a></li>
@@ -169,52 +134,49 @@
             </ul>
         </div>
     </div>
-
 </div>
-<div class="container" style="position:relative;">
-    <div class="investor-nav">
-        <ul>
-            <li id="js-corporateNotice" ><a data-id="1" href="#corporateNotice" >投资章程</a></li>
-            <li id="js-companyRunReport"><a data-id="2" href="#companyRunReport" >投资者关系</a></li>
-            <li id="js-companyManage"><a data-id="3" href="#companyManage" >公司定期专栏</a></li>
-            <!--<li id="js-companyother"><a data-id="4" href="#companyother" >其他动态</a></li>-->
+<div class="container" >
+    <!--左侧导航-->
+    <div class="news-nav">
+        <ul >
+            <li ><a data-id="1" href="#companyNews" >公司新闻</a></li>
+            <li ><a data-id="2" href="#industryInformation" >行业资讯</a></li>
+            <li ><a data-id="3" href="#companyAnnounce" >企业公布</a></li>
         </ul>
     </div>
-    <!--公司公告-->
-    <div id="corporateNotice" class="section-commen div-center" style="height: 500px;">
-        <div><img src="../images/inventor.png"></div>
-        <h3 style="color: #ffa54a;margin-top: 50px;">投资章程</h3>
-        正在建设中，敬请期待！
-        <!--<address>-->
-            <!--<p><strong>&nbsp;&nbsp;地&nbsp;&nbsp;&nbsp;址&nbsp;&nbsp;:</strong>-->
-                <!--<strong> 深圳市南山区高新中四道研祥科技大厦6A</strong>-->
-            <!--</p>-->
-            <!--<p><strong>客服电话:</strong>-->
-                <!--<strong>400-805-0095</strong>-->
-            <!--</p>-->
-            <!--<p><strong>联系电话:</strong>-->
-                <!--<strong>0755-66640096</strong>-->
-            <!--</p>-->
-            <!--<p><strong>&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;箱&nbsp;&nbsp;:</strong>-->
-                <!--<strong>hadlink@hadlink.com</strong>-->
-            <!--</p>-->
-            <!--<p><strong>新浪微博:</strong>-->
-                <!--<strong>http://weibo.com/u/5322200438?from=myfollow_all</strong>-->
-            <!--</p>-->
-
-        <!--</address>-->
-        <!--<div style="width:500px;height:400px;border:#ccc solid 1px;" id="dituContent"></div>-->
-
+    <!--公司新闻-->
+    <div id="companyNews" class="section-commen div-center" style="min-height: 400px;">
+        <div><img src="images/news.png"></div>
+        <h3 style="color: #ffa54a;padding-top: 25px;  ">公司新闻</h3>
+        <ul class="news-ul">
+            <li><a href="productRename.html" target="_blank">91车助手正式更名“开呗”</a> <span style="float: right">2015年1月17日</span></li>
+            <li><a href="carWash.html" target="_blank">1分钱洗车活动</a> <span style="float: right">2015年1月17日</span></li>
+            <li><a href="detection.html" target="_blank">1元钱检测活动</a> <span style="float: right">2015年1月17日</span></li>
+            <li><a href="presentation.html" target="_blank">开呗产品上线发布会</a> <span style="float: right">2015年1月15日</span></li>
+            <li><a href="kaibei.html" target="_blank">开呗APP2.0即将发布</a> <span style="float: right">2015年2月5日</span></li>
+            <li><a href="shaoguang.html" target="_blank">绍光车业董事长何绍华先生莅临海德在线洽谈合作</a> <span style="float: right">2015年2月5日</span></li>
+            <li><a href="move.html" target="_blank">热烈庆祝海德在线乔迁之喜</a> <span style="float: right">2014年11月5日</span></li>
+            <li><a href="carFriends.html" target="_blank">开呗车友会车友莅临海德在线参观</a> <span style="float: right">2014年12月5日</span></li>
+            <li><a href="dream.html" target="_blank">我有一个梦想———海德在线第一次公司战略级全员头脑风暴会议圆满落幕</a> <span style="float: right">2014年6月5日</span></li>
+        </ul>
     </div>
-    <!--经营报告-->
-    <div id="companyRunReport" class="section-commen div-center" style="min-height: 300px;">
-        <h3 style="color: #ffa54a;margin-top: 50px;">投资者关系</h3>
-        正在建设中，敬请期待！
+    <!--行业资讯-->
+    <div id="industryInformation" class="section-commen div-center" style="min-height: 150px;">
+        <h3 style="color: #ffa54a;">行业资讯</h3>
+        <ul class="news-ul">
+            <li><a href="innovate.html" target="_blank">私家车主+汽车实体店+第三方平台=创新</a><span style="float: right;color: #000">2015年1月16日</span></li>
+            <li><a href="internet.html" target="_blank">汽车后市场互联网思维,这7点你必须知道!</a><span style="float: right;color: #000">2015年1月15日</span></li>
+            <li><a href="marketsize.html" target="_blank">中国汽车后市场规模超7000亿 各路资本淘金</a><span style="float: right;color: #000">2015年1月12日</span></li>
+            <li><a href="upgrade.html" target="_blank">汽修店如何升级做O2O</a><span style="float: right;color: #000">2015年1月5日</span></li>
+        </ul>
     </div>
-    <!--公司治理-->
-    <div id="companyManage" class="section-commen div-center" style="min-height: 300px;">
-        <h3 style="color: #ffa54a;margin-top: 50px;">公司定期专栏</h3>
-        正在建设中，敬请期待！
+    <!--企业发布-->
+    <div id="companyAnnounce" class="section-commen div-center" style="height: 250px;">
+        <h3 style="color: #ffa54a;">企业发布</h3>
+        <ul class="news-ul">
+            <li><a href="czsApp.html" target="_blank">开呗即将隆重上线、启动盛大公测</a><span style="float: right;color: #000">2015年1月5日</span></li>
+            <li><a href="movein.html" target="_blank">海德在线乔迁新址</a><span style="float: right;color: #000">2014年10月5日</span></li>
+        </ul>
     </div>
 </div>
 <div class="global-footer" style=" background: #666666;">
@@ -283,105 +245,8 @@
             </ul>
         </div>
     </div>
-    <div class="footer-copyright" style="color: #ffffff"><div style="margin-top: 50px;"><center><h4>Copyright@2015 深圳市海德在线有限公司版权所有</h4> </center></div></div>
+    <div class="footer-copyright" ><div style="margin-top: 50px;"><center><h4 style="color:#cacaca">Copyright@2015 深圳市海德在线有限公司版权所有</h4> </center></div></div>
 </div>
 <div id="slideup" title="返回顶部" class="slideup"></div>
-<script type="text/javascript">
-    //创建和初始化地图函数：
-    function initMap(){
-        createMap();//创建地图
-        setMapEvent();//设置地图事件
-        addMapControl();//向地图添加控件
-        addMarker();//向地图中添加marker
-    }
-
-    //创建地图函数：
-    function createMap(){
-        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-        var point = new BMap.Point(113.939508,22.548112);//定义一个中心点坐标
-        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
-        window.map = map;//将map变量存储在全局
-    }
-
-    //地图事件设置函数：
-    function setMapEvent(){
-        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
-        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
-        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
-        map.enableKeyboard();//启用键盘上下左右键移动地图
-    }
-
-    //地图控件添加函数：
-    function addMapControl(){
-        //向地图中添加缩放控件
-        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-        map.addControl(ctrl_nav);
-        //向地图中添加缩略图控件
-        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
-        map.addControl(ctrl_ove);
-        //向地图中添加比例尺控件
-        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-        map.addControl(ctrl_sca);
-    }
-
-    //标注点数组
-    var markerArr = [{title:"研祥科技大厦6A",content:"深圳市南山区科技园研祥科技大厦6A深圳市海德在线有限公司",point:"113.939355|22.547962",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
-    ];
-    //创建marker
-    function addMarker(){
-        for(var i=0;i<markerArr.length;i++){
-            var json = markerArr[i];
-            var p0 = json.point.split("|")[0];
-            var p1 = json.point.split("|")[1];
-            var point = new BMap.Point(p0,p1);
-            var iconImg = createIcon(json.icon);
-            var marker = new BMap.Marker(point,{icon:iconImg});
-            var iw = createInfoWindow(i);
-            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-            marker.setLabel(label);
-            map.addOverlay(marker);
-            label.setStyle({
-                borderColor:"#808080",
-                color:"#333",
-                cursor:"pointer"
-            });
-
-            (function(){
-                var index = i;
-                var _iw = createInfoWindow(i);
-                var _marker = marker;
-                _marker.addEventListener("click",function(){
-                    this.openInfoWindow(_iw);
-                });
-                _iw.addEventListener("open",function(){
-                    _marker.getLabel().hide();
-                })
-                _iw.addEventListener("close",function(){
-                    _marker.getLabel().show();
-                })
-                label.addEventListener("click",function(){
-                    _marker.openInfoWindow(_iw);
-                })
-                if(!!json.isOpen){
-                    label.hide();
-                    _marker.openInfoWindow(_iw);
-                }
-            })()
-        }
-    }
-    //创建InfoWindow
-    function createInfoWindow(i){
-        var json = markerArr[i];
-        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
-        return iw;
-    }
-    //创建一个Icon
-    function createIcon(json){
-        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
-        return icon;
-    }
-
-    initMap();//创建和初始化地图
-</script>
 </body>
 </html>

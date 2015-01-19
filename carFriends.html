@@ -1,74 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    <link rel="stylesheet" href="../css/public.css">
-    <link rel="stylesheet" href="../Libs/bootstrap/dist/css/bootstrap.min.css">
-    <script src="../Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
-    <script>
-        $(function(){
-            var slideup = $('#slideup');
-            slideup.fadeOut(100);
-            slideup.on('click',function(){//返回顶部
-                $('html,body').animate({
-                    scrollTop: '0px'
-                }, 300);
-                return false;
-            })
-            var div = $('.container .section-commen');
-            div.each(function(){
-                $(this).find('li').last().css('border','none');
-            })
-            $(window).scroll(function(){
-                var top = $(document).scrollTop()
-                if(top >= 150){
-                    $('.news-nav').css('top','0');
-                    slideup.fadeIn(300);
-                }else{
-                    $('.news-nav').css('top',170);
-                    slideup.fadeOut(300);
-                }
-                var a = $('.news-nav').find('a');
-                function setValue(Element,num){
-                    Element.each(function(){
-                        var id = $(this).data('id');
-                        if(id == num){
-                            $(this).css({'color':'#ffa54a','font-size':'20px'});
-                            $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
-                            $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
-                            return false;
-                        }
-                    })
-                }
-                if(top >200){
-                    setValue(a,1);
-                }
-                if(top >=400){
-                    setValue(a,2);
-                }
-                if(top >=800){
-                    setValue(a,3);
-                }
-
-            })
-        })
-    </script>
-    <title></title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="Libs/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-<div class="global-nav">
+<div class="global-nav" style="height: 60px;line-height: 60px;">
     <div class="container">
-        <div class="hadlink-logo"><a href="index.html"><img src="../images/hadlinkLOGO.png"></a> </div>
-        <div class="nav-bar" style="margin-left: 50px;">
+        <div class="nav-bar" style="height: 40px;width: 100%;line-height: 40px;margin-top:10px;">
             <ul>
-                <li style="width: 120px; ">
+                <li >
                     <a href="index.html" id="firstPage">首页</a>
                 </li>
-                <li style="width: 120px;">
+                <li>
                     <a href="companyInfo.html" id="copanyInfo">公司信息</a>
-                    <ul class="company-tab" style="height:220px;padding-top: 10px;">
+                    <ul class="company-tab" style="height:220px;margin: 0;">
                         <li> 公司介绍</a></li>
                         <li> <a href="companyInfo.html#president" >总裁寄语</a></li>
                         <li> <a href="companyInfo.html#devCourse" >发展历程</a></li>
@@ -101,10 +51,10 @@
                 <li style="width: 120px;">
                     <a href="businessSystem.html">业务体系</a>
                     <ul class="company-tab" style="height: 180px;padding-top: 10px;">
-                        <li><a href="businessSystem.html#kaiba" >开呗</a></li>
-                        <li><a href="businessSystem.html#carNews" >98车讯</a></li>
-                        <li><a href="businessSystem.html#shenzhenBranch" >深圳分公司</a></li>
-                        <li><a href="businessSystem.html#guangzhouBranch" >广州分公司</a></li>
+                        <li><a href="businessSystem.html#companyIntro" >开呗</a></li>
+                        <li><a href="businessSystem.html#president" >98车讯</a></li>
+                        <li><a href="businessSystem.html#devCourse" >深圳分公司</a></li>
+                        <li><a href="businessSystem.html#organization" >广州分公司</a></li>
                     </ul>
                 </li>
 
@@ -134,49 +84,28 @@
             </ul>
         </div>
     </div>
+
 </div>
-<div class="container" >
-    <!--左侧导航-->
-    <div class="news-nav">
-        <ul >
-            <li ><a data-id="1" href="#companyNews" >公司新闻</a></li>
-            <li ><a data-id="2" href="#industryInformation" >行业资讯</a></li>
-            <li ><a data-id="3" href="#companyAnnounce" >企业公布</a></li>
-        </ul>
-    </div>
-    <!--公司新闻-->
-    <div id="companyNews" class="section-commen div-center" style="min-height: 400px;">
-        <div><img src="../images/news.png"></div>
-        <h3 style="color: #ffa54a;padding-top: 25px;  ">公司新闻</h3>
-        <ul class="news-ul">
-            <li><a href="productRename.html" target="_blank">91车助手正式更名“开呗”</a> <span style="float: right">2015年1月17日</span></li>
-            <li><a href="carWash.html" target="_blank">1分钱洗车活动</a> <span style="float: right">2015年1月17日</span></li>
-            <li><a href="detection.html" target="_blank">1元钱检测活动</a> <span style="float: right">2015年1月17日</span></li>
-            <li><a href="presentation.html" target="_blank">开呗产品上线发布会</a> <span style="float: right">2015年1月15日</span></li>
-            <li><a href="kaibei.html" target="_blank">开呗APP2.0即将发布</a> <span style="float: right">2015年2月5日</span></li>
-            <li><a href="shaoguang.html" target="_blank">绍光车业董事长何绍华先生莅临海德在线洽谈合作</a> <span style="float: right">2015年2月5日</span></li>
-            <li><a href="move.html" target="_blank">热烈庆祝海德在线乔迁之喜</a> <span style="float: right">2014年11月5日</span></li>
-            <li><a href="carFriends.html" target="_blank">开呗车友会车友莅临海德在线参观</a> <span style="float: right">2014年12月5日</span></li>
-            <li><a href="dream.html" target="_blank">我有一个梦想———海德在线第一次公司战略级全员头脑风暴会议圆满落幕</a> <span style="float: right">2014年6月5日</span></li>
-        </ul>
-    </div>
-    <!--行业资讯-->
-    <div id="industryInformation" class="section-commen div-center" style="min-height: 150px;">
-        <h3 style="color: #ffa54a;">行业资讯</h3>
-        <ul class="news-ul">
-            <li><a href="innovate.html" target="_blank">私家车主+汽车实体店+第三方平台=创新</a><span style="float: right;color: #000">2015年1月16日</span></li>
-            <li><a href="internet.html" target="_blank">汽车后市场互联网思维,这7点你必须知道!</a><span style="float: right;color: #000">2015年1月15日</span></li>
-            <li><a href="marketsize.html" target="_blank">中国汽车后市场规模超7000亿 各路资本淘金</a><span style="float: right;color: #000">2015年1月12日</span></li>
-            <li><a href="upgrade.html" target="_blank">汽修店如何升级做O2O</a><span style="float: right;color: #000">2015年1月5日</span></li>
-        </ul>
-    </div>
-    <!--企业发布-->
-    <div id="companyAnnounce" class="section-commen div-center" style="height: 250px;">
-        <h3 style="color: #ffa54a;">企业发布</h3>
-        <ul class="news-ul">
-            <li><a href="czsApp.html" target="_blank">开呗即将隆重上线、启动盛大公测</a><span style="float: right;color: #000">2015年1月5日</span></li>
-            <li><a href="movein.html" target="_blank">海德在线乔迁新址</a><span style="float: right;color: #000">2014年10月5日</span></li>
-        </ul>
+<div class="container">
+    <div style="margin-top: 5px;"><a href="news.html"><img src="images/newscenter.png"></a> <span ><a class="bread-crumbs" href="news.html#companyNews">公司新闻</a> </span></div>
+    <div id="companyNews" class="section-news" style="height: auto;width: 80%;">
+        <p>
+        </p><h3 style="text-align:center">91车助手车友会车友莅临海德在线参观</h3>
+        <h4 style="text-align:center; color:#666">发布日期：2014-11-16</h4>
+        <p class="p-low">
+            &nbsp; &nbsp;&nbsp; &nbsp; 11月16日，在海德在线乔迁新办公室之际，91车助手车友会车友们自发组织代表前来庆贺海德在线乔迁之喜。
+            <br>&nbsp; &nbsp;&nbsp; &nbsp; 91车助手是海德在线的主导产品，91车助手为广大车友们搭建了一个便捷、透明、质优、价廉的一站式在线服务平台，积聚了60万车主会员，海德在线依据91车助手成立了91车助手车友会，旨在为广大91车助手车友们提供一个交流平台，91车助手车友会车友由91车助手平台会员组成，一直以来对海德在线甚为关注，海德在线的发展受到91车助手车友会的大力支持。</p>
+        <br>
+        <center><img src="images/cyh-1.jpg" width="600" height="400"  ></center>
+        <p></p>
+        <center><img src="images/cyh-2.jpg" width="600" height="400" ></center>
+        <p></p>
+        <center><img src="images/cyh-3.jpg" width="600" height="400" ></center>
+        <p></p>
+        <center><img src="images/cyh-4.jpg" width="600" height="400" ></center>
+        <p></p>
+        <center><img src="images/cyh-5.jpg" width="600" height="400" ></center>
+        <p></p>
     </div>
 </div>
 <div class="global-footer" style=" background: #666666;">
@@ -245,8 +174,9 @@
             </ul>
         </div>
     </div>
-    <div class="footer-copyright" ><div style="margin-top: 50px;"><center><h4 style="color:#cacaca">Copyright@2015 深圳市海德在线有限公司版权所有</h4> </center></div></div>
+    <div class="footer-copyright" style="color: #ffffff"><div style="margin-top: 50px;"><center><h4>Copyright@2015 深圳市海德在线有限公司版权所有</h4> </center></div></div>
 </div>
-<div id="slideup" title="返回顶部" class="slideup"></div>
+
+
 </body>
 </html>
