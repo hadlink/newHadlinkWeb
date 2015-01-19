@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="Libs/bootstrap/dist/css/bootstrap.css">
-    <script src="Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
     <script>
         $(function(){
             $('#container').find('.view').mouseover(function(){
@@ -43,112 +44,118 @@
 </head>
 <body>
 
-<div class="global-bar">
-<div class="lore">
-    <span><a href=""> 注册</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="">登录</a> </span>&nbsp;&nbsp;&nbsp;<img style="height: auto;line-height: 50" src="images/flag.jpg">&nbsp;&nbsp;&nbsp;
-</div>
-</div>
-<div class="global-nav">
+<div class="global-fluid" style="background: #eaeaea;">
+    <div class="global-bar">
+        <div class="had-container">
+            <div class="lore">
+                 <span><a title="该功能正在建设中，敬请期待！" href="javascript:void(null)"> 注册</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span><a title="该功能正在建设中，敬请期待！" href="javascript:void(null)">登录</a> </span>&nbsp;&nbsp;&nbsp;<img style="height: auto;line-height: 50" src="images/flag.jpg">&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    <div class="had-container">
+        <div class="global-nav">
+            <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
+            <div >
+                <ul class="nav-bar">
+                    <li><a href="index.html" id="firstPage">首页</a> </li>
+                    <li ><a href="companyInfo.html" id="copanyInfo">公司信息</a></li>
+                    <li><a href="news.html" id="news">新闻中心</a></li>
+                    <li><a href="corporateCulture.html">企业文化</a></li>
+                    <li ><a href="businessSystem.html">业务体系</a></li>
+                    <li ><a href="investor.html">投资者关系</a></li>
+                    <li ><a href="cooperate.html" id="cooperation">合作洽谈</a></li>
 
-    <div class="container">
-        <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
-        <div class="nav-bar">
-            <ul>
-                <li style="width: 110px;margin-left: 30px; "><a href="index.html" id="firstPage">首页</a> </li>
-                <li style="width: 110px;"><a href="companyInfo.html" id="copanyInfo">公司信息</a></li>
-                <li style="width: 110px;"><a href="news.html" id="news">新闻中心</a></li>
-                <li style="width: 110px;"><a href="corporateCulture.html">企业文化</a></li>
-                <li style="width: 110px;"><a href="businessSystem.html">业务体系</a></li>
-                <li style="width: 110px;"><a href="investor.html">投资者关系</a></li>
-                <li style="width: 110px;"><a href="cooperate.html" id="cooperation">合作洽谈</a></li>
-
-            </ul>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 
-<div id="container" class="container"   style="min-height: 740px;">
-    <button id="close" type="button" class="btn btn-lg" style="position:relative;margin-left:15px;border-radius: 0;">
-        <span class="glyphicon glyphicon-remove" ></span>
+<div id="container" class="had-container"   style="min-height: 740px;">
+    <button id="close" type="button" class="btn btn-lg" style="position: absolute;margin-left: 1010px;">
+    <span class="glyphicon glyphicon-remove" ></span>
     </button>
     <div id="windowInfo" class="alert-window">
-
-        <a href="productRename.html"> <img src="images/shouye.jpg" ></a>
+    <a href="productRename.html"> <img src="images/shouye.jpg" ></a>
     </div>
-
-        <div class="about-us m-top-1 view"><a href="companyInfo.html"><img src="images/aboutus.png"></a></div>
-        <div class="latest-news m-top-2 view"><a href=""><img src="images/latest.png"></a></div>
-        <div class="industry m-top-3 view" ><a href="news.html#industryInformation"><img src="images/industry.png"></a></div>
-        <div class="product-info m-top-4 view"><a href="businessSystem.html"><img src="images/product.png"></a></div>
-        <div class="invite-telents m-top-5 view"><a href="cooperate.html#talentJoin"><img src="images/invaite.png"></a></div>
-
+    <div class="about-us m-top-1 view"><a href="companyInfo.html"><img src="images/aboutus.png"></a></div>
+    <div class="latest-news m-top-2 view"><a href=""><img src="images/latest.png"></a></div>
+    <div class="industry m-top-3 view" ><a href="news.html#industryInformation"><img src="images/industry.png"></a></div>
+    <div class="product-info m-top-4 view"><a href="businessSystem.html"><img src="images/product.png"></a></div>
+    <div class="invite-telents m-top-5 view"><a href="cooperate.html#talentJoin"><img src="images/invaite.png"></a></div>
 </div>
 
-<div class="global-footer" style=" background: #666666;padding: 50px;">
-    <div class="footer-content">
-        <div class="section-one">
-            <center><p class="h-set">企业核心价值</p></center>
-            <p style="color: #cacaca;"><strong >激情:</strong><font style="color: #cacaca;" >它具有魔力与吸引力，吸引着无数的人去爆发、爆发、爆发、爆发这激情。</font></p>
-            <p style="color: #cacaca; padding-top: 10px;"><strong>创新:</strong>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。</p>
+<div class="global-fluid" style=" background: #666666;">
+    <div class="had-container" >
+        <div class="global-footer">
+            <div class="had-container">
+                <div class="section-one">
+                    <center><p class="title-font">企业核心价值</p></center>
+                    <p style="color: #cacaca;"><strong >激情:</strong><font style="color: #cacaca;" >它具有魔力与吸引力，吸引着无数的人去爆发、爆发、爆发、爆发这激情。</font></p>
+                    <p style="color: #cacaca; padding-top: 10px;"><strong>创新:</strong>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。</p>
 
-            <p style="color: #cacaca;padding-top: 10px;"><strong>价值:</strong>海德在线是一个有共同目标，共同价值观的社会团体，如何衡量个人对于海德在线的价值，取决于每个人对于这个"社会"的贡献度。</p>
-        </div>
-        <div class="section-two">
-            <ul>
-                <center><p class="h-set">公司信息</p></center>
-                <li><a href="companyInfo.html#companyIntro" >海德简介</a></li>
-                <li><a href="companyInfo.html#president" >总裁致辞</a></li>
-                <li><a href="companyInfo.html#devCourse" >发展历程</a></li>
-                <li><a href="companyInfo.html#organization">组织结构</a></li>
-                <li><a href="companyInfo.html#coreGroup" >核心团队</a></li>
-            </ul>
-        </div>
-        <div class="section-two">
-            <ul>
-                <center><p class="h-set">业务体系</p></center>
-                <li><a href="businessSystem.html#kaiba" >开呗</a></li>
-                <li><a href="businessSystem.html#carNews" >98车讯</a></li>
-                <li><a href="businessSystem.html#shenzhenBranch" >深圳分公司</a></li>
-                <li><a href="businessSystem.html#guangzhouBranch" >广州分公司</a></li>
-            </ul>
-        </div>
-        <div class="section-two">
-            <ul>
-                <center><p class="h-set">企业文化</p></center>
-                <li><a href="corporateCulture.html#corporateVision" >企业愿景</a></li>
-                <li><a href="corporateCulture.html#mission" >企业使命</a></li>
-                <li><a href="corporateCulture.html#purpose" >企业宗旨</a></li>
-                <li><a href="corporateCulture.html#value" targetdiv="div5">核心价值观</a></li>
-                <li><a href="corporateCulture.html#culture" targetdiv="div1">文化品格</a></li>
-                <li><a href="corporateCulture.html#product" targetdiv="div2">产品理念</a></li>
-                <li><a href="corporateCulture.html#talent" targetdiv="div4">人才策略</a></li>
-                <li><a href="corporateCulture.html#hadlink" targetdiv="div5">海德印象</a></li>
-                <li><a href="corporateCulture.html#forbid" targetdiv="div5">高压线</a></li>
-            </ul>
-        </div>
-        <div class="section-two">
-            <ul>
-                <center><p class="h-set">投资者关系</p></center>
-                <li><a href="investor.html#corporateNotice" >公司公告</a></li>
-                <li><a href="investor.html#companyRunReport">经营报告</a></li>
-                <li><a href="investor.html#companyManage">公司治理</a></li>
-                <li><a href="investor.html#companyother">其他动态</a></li>
-            </ul>
-        </div>
-        <div class="section-two">
-            <ul>
-                <center><p class="h-set">合作洽谈</p></center>
-                <li><a href="cooperate.html#headquarters">海德在线</a></li>
-                <li><a href="cooperate.html#talentJoin">人才加盟</a></li>
-                <li><a href="cooperate.html#operation">运行推广中心</a></li>
-                <li><a href="cooperate.html#business" >商务拓展中心</a></li>
-                <li><a href="cooperate.html#supplyChain" >供应链管理中心</a></li>
-                <li><a href="cooperate.html#shenzhenBranch">深圳分公司</a></li>
-                <li><a href="cooperate.html#guangzhou">广州分公司</a></li>
-            </ul>
+                    <p style="color: #cacaca;padding-top: 10px;"><strong>价值:</strong>海德在线是一个有共同目标，共同价值观的社会团体，如何衡量个人对于海德在线的价值，取决于每个人对于这个"社会"的贡献度。</p>
+                </div>
+                <div class="section-two">
+                    <ul>
+                        <center><p class="title-font">公司信息</p></center>
+                        <li><a href="companyInfo.html#companyIntro" >海德简介</a></li>
+                        <li><a href="companyInfo.html#president" >总裁致辞</a></li>
+                        <li><a href="companyInfo.html#devCourse" >发展历程</a></li>
+                        <li><a href="companyInfo.html#organization">组织结构</a></li>
+                        <li><a href="companyInfo.html#coreGroup" >核心团队</a></li>
+                    </ul>
+                </div>
+                <div class="section-two">
+                    <ul>
+                        <center><p class="title-font">业务体系</p></center>
+                        <li><a href="businessSystem.html#kaiba" >开呗</a></li>
+                        <li><a href="businessSystem.html#carNews" >98车讯</a></li>
+                        <li><a href="businessSystem.html#shenzhenBranch" >深圳分公司</a></li>
+                        <li><a href="businessSystem.html#guangzhouBranch" >广州分公司</a></li>
+                    </ul>
+                </div>
+                <div class="section-two">
+                    <ul>
+                        <center><p class="title-font">企业文化</p></center>
+                        <li><a href="corporateCulture.html#corporateVision" >企业愿景</a></li>
+                        <li><a href="corporateCulture.html#mission" >企业使命</a></li>
+                        <li><a href="corporateCulture.html#purpose" >企业宗旨</a></li>
+                        <li><a href="corporateCulture.html#value" targetdiv="div5">核心价值观</a></li>
+                        <li><a href="corporateCulture.html#culture" targetdiv="div1">文化品格</a></li>
+                        <li><a href="corporateCulture.html#product" targetdiv="div2">产品理念</a></li>
+                        <li><a href="corporateCulture.html#talent" targetdiv="div4">人才策略</a></li>
+                        <li><a href="corporateCulture.html#hadlink" targetdiv="div5">海德印象</a></li>
+                    </ul>
+                </div>
+                <div class="section-two">
+                    <ul>
+                        <center><p class="title-font">投资者关系</p></center>
+                        <li><a href="investor.html#corporateNotice" >公司公告</a></li>
+                        <li><a href="investor.html#companyRunReport">经营报告</a></li>
+                        <li><a href="investor.html#companyManage">公司治理</a></li>
+                        <li><a href="investor.html#companyother">其他动态</a></li>
+                    </ul>
+                </div>
+                <div class="section-two">
+                    <ul>
+                        <center><p class="title-font">合作洽谈</p></center>
+                        <li><a href="cooperate.html#headquarters">海德在线</a></li>
+                        <li><a href="cooperate.html#talentJoin">招贤纳士</a></li>
+                        <li><a href="cooperate.html#operation">运行推广中心</a></li>
+                        <li><a href="cooperate.html#business" >商务拓展中心</a></li>
+                        <li><a href="cooperate.html#supplyChain" >供应链管理中心</a></li>
+                        <li><a href="cooperate.html#shenzhenBranch">深圳分公司</a></li>
+                        <li><a href="cooperate.html#guangzhou">广州分公司</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="had-container" style="float: left;">
+                <div class="footer-copyright" style="color: #ffffff"><div style="margin-top: 0px;"><center><h4>Copyright@2015 深圳市海德在线有限公司版权所有</h4> </center></div></div>
+            </div>
         </div>
     </div>
-    <div class="footer-copyright" style="color: #ffffff"><div style="margin-top: 0px;"><center><h4>Copyright@2015 深圳市海德在线有限公司版权所有</h4> </center></div></div>
 </div>
 
 </body>

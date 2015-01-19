@@ -7,157 +7,38 @@ html {
 body {
     margin: 0;
 }
-.global-bar {
-    width: 100%;
-    height: 50px;
-    color: #666666;
-    line-height: 50px;
-    position: relative;
-    top:0;
-    left: 0;
-    background-image: url("../images/topself.jpg");
-}
-.global-bar .lore {
-    float: right;
-    height: 50px;
-    width: 500px;
-}
-.lore a {
-    color: #666666;
-}
-.global-nav {
-    width: 100%;
-    height: 170px;
-    background: #eaeaea;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-}
 
-.hadlink-logo {
-    height: 160px;
-    width:15%;
-    line-height: 160px;
-    float: left
-}
-.nav-bar {
-    width: 80%;
-    height: 40px;
-    line-height: 40px;
-    margin-top: 130px;
-    float: left;
-
-}
-.nav-bar ul li {
-    list-style: none;
-    float: left;
-    height: 40px;
-    /*margin-left: 5px;*/
-    text-align: center;
-    line-height: 40px;
-}
-.nav-bar ul li:hover {
-    background: #ff9326;
-    border-bottom: 5px solid #ff9326;
-
-}
-.nav-bar ul li:hover .company-tab  {
-    display: block;
-}
-.nav-btn {
-    width: 120px;
-    height: 35px;
-}
-.nav-bar a {
-    display: block;
-    width: 120px;
-    height: 50px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #2C3E50;
-}
-.nav-bar a:hover {
-    color: #fff;
-    text-decoration: none;
-}
-.company-tab {
-    display: none;
-    width: 120px;
-    height: 210px;
-    background: #ECF0F1;
-    margin-top: -10px;
-    padding-top: 10px;
-
-}
-.company-tab li {
-    width: 110px;
-    height: 35px;
-    line-height: 35px;
-    margin-left: -35px;
-    list-style: none;
-}
-.company-tab li:hover {
-    background: #BDC3C7;
-}
-.culture-tab {
-    display: none;
-    width: 120px;
-    height: 500px;
-    background: #ECF0F1;
-    /*margin-top: 3px;*/
-
-}
-.culture-tab li {
-    /*display: none;*/
-    width: 120px;
-    height: 35px;
-    line-height: 35px;
-    margin-top: 5px;
-    margin-left: -35px;
-    list-style: none;
-}
 
 /* footer css file */
 .global-footer {
     width: 100%;
     height: 500px;
-    background: #666666;
-    bottom: 0;
-    left: 0;
+}
+.global-footer .title-font {
+    color: #ffffff;
+    font-size: 18px;
+}
+.global-footer .section-one {
+    padding-top: 100px;
+    width: 200px;
+    height: auto;
+    text-align: left;
+    float: left;
+}
+.global-footer .section-two {
+    padding-top: 100px;
+    width: 130px;
+    height: auto;
+    text-align: left;
+    margin-left: 30px;
+    float: left;
 }
 
-.global-footer .footer-content {
-    width: 100%;
-    height: 400px;
-}
-.footer-content .h-set {
-    padding-top:15px;
-    color: #ffffff;
-    font-size: 22px;
-}
-.footer-content .section-one {
-    width: 250px;
-    height: 300px;
-    margin-left: 200px;
-    font-size: 16px;
-    text-align: left;
-    float: left;
-}
-.footer-content .section-two {
-    width:160px ;
-    height: 300px;
-    margin-left: 2%;
-    font-size: 15px;
-    font-family: sans-serif;
-    text-align: left;
-    float: left;
-}
 .section-two li {
     width: 120px;
     list-style: none;
     margin-top: 6px;
-    margin-left: 25px;
+    margin-left: 15px;
 }
 .section-two a {
     text-decoration: none;
@@ -167,11 +48,6 @@ body {
 .section-two li a:hover {
     background: #ff9326;
     text-decoration: none;
-}
-
-.global-footer .footer-copyright {
-    width: 100%;
-    height: 50px;
 }
 /* Corporate Culture css file */
 .core-content {
@@ -331,9 +207,6 @@ body {
 }
 .div-center {
     margin-left: auto;
-    /*margin-right: auto;*/
-    /*padding: 0px;*/
-
 }
 .section-intro {
     width: 85%;
@@ -345,8 +218,8 @@ body {
 }
 .section-commen {
     width: 85%;
-    /*min-height: 750px;*/
     border-bottom: 2px solid #eaeaea;
+    overflow: hidden;
 }
 .section-ceo {
     width: 85%;
@@ -361,12 +234,11 @@ body {
     width: 250px;
     height: 50px;
     text-align: center;
-    /*line-height: 50px;*/
 }
 .section-commen .person-show {
     width: 300px;
     height: 450px;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     float: left;
     margin-top: 20px;
 
@@ -383,9 +255,13 @@ body {
 
 }
 .person-show .show-pic {
-    width: 300px;
-    height: 300px;
+    width:250px;
+    height: 250px;
 
+}
+.pic-scale {
+    width: 80%;
+    height: 80%;
 }
 .person-show .show-words {
     height: 100px;
@@ -411,13 +287,14 @@ body {
 .p-low {
     line-height: 1.5;
     margin-top: 15px;
+    text-indent: 2em;
 }
 .p-h3 {
     color: #ffa54a;
     margin-top: 40px;
 }
 .section-news {
-    width: 80%;
+    width: 90%;
     padding: 20px;
 }
 .section-news p {
@@ -434,7 +311,10 @@ body {
     bottom:150px;
     width: 80px;
     height: 40px;
-    background-image: url('../images/backtop.png')
+    /*background-image: url('../images/backtop.png')*/
+}
+.slideup-active {
+    background: #95A5A6;
 }
 .omit {
     color:#3498DB;
