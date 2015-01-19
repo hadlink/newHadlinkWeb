@@ -14,19 +14,14 @@
     <script>
         $(function(){
             var slideup = $('#slideup');
-//            slideup.fadeOut(100);
+
             slideup.on('click',function(){//返回顶部
                 $('html,body').animate({
                     scrollTop: '0px'
                 }, 300);
                 return false;
             });
-//            slideup.hover(function(){
-//                $(this).addClass('active')
-//            },function(){
-//                $(this).removeClass('active')
-//            });
-            //tip plugins
+
             $("[data-toggle='popover']").popover();
             $(window).scroll(function(){
                 var top = $(document).scrollTop()
@@ -34,7 +29,7 @@
                     $('.company-nav').css('top','0');
                     slideup.fadeIn(300);
                 }else{
-                    $('.company-nav').css('top',220);
+                    $('.company-nav').css('top',170);
                     slideup.fadeOut(300);
                 }
 
@@ -72,13 +67,6 @@
 <body>
 <!--顶部导航-->
 <div class="global-fluid" style="background: #eaeaea;">
-    <div class="global-bar">
-        <div class="had-container">
-            <div class="lore">
-                <span><a title="该功能正在建设中，敬请期待！" href="javascript:void(null)"> 注册</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span><a title="该功能正在建设中，敬请期待！" href="javascript:void(null)">登录</a> </span>&nbsp;&nbsp;&nbsp;<img style="height: auto;line-height: 50" src="images/flag.jpg">&nbsp;&nbsp;&nbsp;
-            </div>
-        </div>
-    </div>
     <div class="had-container">
         <div class="global-nav">
             <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
@@ -212,7 +200,7 @@
         </div>
     </div>
     <!--核心团队-->
-    <div id="coreGroup" class="section-commen div-center" style="min-height: 2000px;">
+    <div id="coreGroup" class="section-commen div-center" style="min-height: 1750px;">
         <h3 style="color: #ffa54a;padding-top: 20px;">核心团队</h3>
         <div class="person-show" >
             <div class="show-title" >
@@ -221,7 +209,7 @@
             <div class="show-pic" ><img class="pic-scale" src="images/chengzong.png" ></div>
             <div class="show-words">
                 <div class="text-left" >
-                    超过10年的国内知名企业工作经验，涉及家电，手机、汽车 三个行业。擅长创新，目标感超强，天生的嗅觉比较敏锐。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="程平,创始人、CEO
+                    超过10年的国内知名企业工作经验，涉及家电，手机、汽车 三个行业。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="程平,创始人、CEO
 花名吉利,
 典型的北方男人，真诚，率真,
 超过10年的国内知名企业工作经验，涉及家电，手机、汽车 三个行业。擅长创新，目标感超强，天生的嗅觉比较敏锐。2014年带领一帮草根兄弟创建海德在线，团队兄弟昵称为带头大哥，目前担任海德在线董事长兼CEO。"><strong>[......]</strong></span></div>
@@ -229,25 +217,11 @@
         </div>
         <div class="person-show" >
             <div class="show-title" >
-                <span><strong style="color: #ffa54a;font-size: 18px;">刘俊</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >奥拓</font>&nbsp;|&nbsp;<font style="color: #3498DB">运营总监</font></span>
-            </div>
-            <div class="show-pic" ><img class="pic-scale" src="images/liujun.png" ></div>
-            <div class="show-words">
-                <p class="text-left">1980年&nbsp;made&nbsp;in&nbsp;china&nbsp;的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，身高嘛，除了精华点，也没有啥特点。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="刘俊,运营总监,
-花名奥拓,
-1980年 made in china 的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，身高嘛，除了精华点，也没有啥特点。好不容易熬到20来岁出头，混了个本科文凭。从此踏上了江湖，成为了攻城狮，熬了个一年半载，感觉没啥奔头，于是乎俺决定要做高大上的运营，以为从此逼格腾飞，冲上九宵。十几年熬下来，发现俺还是那个1024G纯吊丝。至于兴趣爱好嘛，很多：看书、K歌、打球、疯~~（信息量过大，此处省略1万字…）。 
-目前创建海德在线后，俺还是干俺的老本行——负责运营工作。和我们牛B的神队友们（其实有很多酒鬼和吃货）共同熬工作、熬生活。我们为了同一个伟大的梦想，痛并快乐着。我们一定是“不飞则已、一飞冲天，不鸣则已，一鸣惊人”。
-2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
-            </div>
-        </div>
-
-        <div class="person-show" >
-            <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">郑练</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >科鲁兹</font>&nbsp;|&nbsp;<font style="color: #3498DB">产品总监</font></span>
             </div>
             <div class="show-pic" ><img class="pic-scale" src="images/zhenlian.png" ></div>
             <div class="show-words">
-                <p class="text-left">湖北武汉人、本科毕业于华中科技大学材料学院，武汉大学工商管理双学士。2010年加盟腾讯QQ空间产品部<span class="omit" data-toggle="popover" data-placement="bottom" data-content="郑练,产品总监,
+                <p class="text-left">湖北武汉人、本科毕业于华中科技大学材料学院，武汉大学工商管理双学士。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="郑练,产品总监,
 花名科鲁兹,
 湖北武汉人、本科毕业于华中科技大学材料学院，武汉大学工商管理双学士。2010年加盟腾讯QQ空间产品部，负责朋友网产品策划、运营及校园推广项目。历任腾讯朋友网产品经理，QQ空间、手机QQ市场经理等职，2011年深圳世界大学生运动会火炬手。
 2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span>
@@ -256,11 +230,26 @@
         </div>
         <div class="person-show" >
             <div class="show-title" >
+                <span><strong style="color: #ffa54a;font-size: 18px;">刘俊</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >奥拓</font>&nbsp;|&nbsp;<font style="color: #3498DB">运营总监</font></span>
+            </div>
+            <div class="show-pic" ><img class="pic-scale" src="images/liujun.png" ></div>
+            <div class="show-words">
+                <p class="text-left">1980年&nbsp;made&nbsp;in&nbsp;china&nbsp;的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，<span class="omit" data-toggle="popover" data-placement="bottom" data-content="刘俊,运营总监,
+花名奥拓,
+1980年 made in china 的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，身高嘛，除了精华点，也没有啥特点。好不容易熬到20来岁出头，混了个本科文凭。从此踏上了江湖，成为了攻城狮，熬了个一年半载，感觉没啥奔头，于是乎俺决定要做高大上的运营，以为从此逼格腾飞，冲上九宵。十几年熬下来，发现俺还是那个1024G纯吊丝。至于兴趣爱好嘛，很多：看书、K歌、打球、疯~~（信息量过大，此处省略1万字…）。 
+目前创建海德在线后，俺还是干俺的老本行——负责运营工作。和我们牛B的神队友们（其实有很多酒鬼和吃货）共同熬工作、熬生活。我们为了同一个伟大的梦想，痛并快乐着。我们一定是“不飞则已、一飞冲天，不鸣则已，一鸣惊人”。
+2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
+            </div>
+        </div>
+
+
+        <div class="person-show" >
+            <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">钟其灵</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >马丁</font>&nbsp;|&nbsp;<font style="color: #3498DB">研发高级经理</font></span>
             </div>
             <div class="show-pic" ><img class="pic-scale" src="images/zhongqilin.png" ></div>
             <div class="show-words">
-                <p class="text-left">毕业于华中科技大学，有着非常丰富的程序经验，擅长的技术包括安卓，ios，cocos2dx，flash，python，mongodb等<span class="omit" data-toggle="popover" data-placement="bottom" data-content="钟其灵,研发高级经理,
+                <p class="text-left">毕业于华中科技大学，有着非常丰富的程序经验，擅长的技术包括安卓，ios，cocos2dx，flash等<span class="omit" data-toggle="popover" data-placement="bottom" data-content="钟其灵,研发高级经理,
 花名马丁,
 毕业于华中科技大学，有着非常丰富的程序经验，擅长的技术包括安卓，ios，cocos2dx，flash，python，mongodb等，涵盖了客户端，服务器和数据库。富有创新和钻研精神，大学开始就尝试各种创业活动。也是腾讯优秀的技术大牛。
 2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
@@ -272,7 +261,7 @@
             </div>
             <div class="show-pic" ><img class="pic-scale" src="images/linhanbin.png" ></div>
             <div class="show-words">
-                <p class="text-left">曾服务于腾讯社交广告平台以及手机QQ游戏中心，亲历亿万访问量工程的建设过程，擅长Web前台开发，系统设计。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="林汉彬，架构设计师，
+                <p class="text-left">曾服务于腾讯社交广告平台以及手机QQ游戏中心，亲历亿万访问量工程的建设过程。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="林汉彬，架构设计师，
 花名歌诗图，
 过去曾服务于腾讯社交广告平台以及手机QQ游戏中心，亲历亿万访问量工程的建设过程，感谢过去团队开拓我的视野。我擅长Web前台开发，系统设计。具体技能涉猎JS/Html/Css、PHP、Java、NodeJs、MySql、MongoDB、Object-C/Swift等等。 「玩时投入玩，工作时玩命工作」是我的信条。2014年在带头大哥的感染下，与兄弟们一起，带着梦想加入充满活力的海德在线。
 2014年加入海德在线，成为核心的创始团队成员之一。"><strong>[......]</strong></span></p>
@@ -284,14 +273,25 @@
             </div>
             <div class="show-pic" ><img class="pic-scale" src="images/wuweiheng.png" ></div>
             <div class="show-words">
-                <p class="text-left">平庸就是缺乏想象，缺乏个性，缺乏锐气，缺乏创见，缺乏追求，缺乏理想，缺乏勇气，或许有些知识，但是没有见识<span class="omit" data-toggle="popover" data-placement="bottom" data-content="吴炜恒,高级技术大牛,
+                <p class="text-left">平庸就是缺乏想象，缺乏个性，缺乏锐气，缺乏创见，缺乏追求，缺乏理想<span class="omit" data-toggle="popover" data-placement="bottom" data-content="吴炜恒,高级技术大牛,
 花名途观,
 平庸就是缺乏想象，缺乏个性，缺乏锐气，缺乏创见，缺乏追求，缺乏理想，缺乏勇气，或许有些知识，但是没有见识，或许有些才能，但是没有才华，或许有个文凭，但是没有水平。平庸就是除了物质需要别无他求，以现实为自己活动的上限，以身边的人为自己的标准，以生活的物质处境为自己的骄傲。平庸就是人云亦云，模仿，攀比，陈腐，乏味，呆板，枯燥，俗气，单调，没有色彩，四平八稳，没有挑战性，一眼看得到底，对特立独行恨之入骨。我是泰迪，我想做一个不平庸的人。
 2010年以专业的软件技术开发背景，破格直接加入腾讯集团，负责腾讯技术开发，2014年加入海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
 
             </div>
         </div>
-
+        <div class="person-show" >
+            <div class="show-title" >
+                <span><strong style="color: #ffa54a;font-size: 18px;">徐昂</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >福特</font>&nbsp;|&nbsp;<font style="color: #3498DB">战略推进总监</font></span>
+            </div>
+            <div class="show-pic" ><img class="pic-scale" src="images/xuhang.png" ></div>
+            <div class="show-words">
+                <p class="text-left">作为汽车互联网公司的资深从业者，有过几次的创业成功经验。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="徐昂,战略推进负责人兼任BD线下商务拓展总监
+花名福特,
+作为汽车互联网公司的资深从业者，有过几次的创业成功经验。擅长公司战略梳理、战略执行及系统建设，擅长O2O项目运营管理。
+2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
+            </div>
+        </div>
         <div class="person-show" >
             <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">陈振</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >北极星</font>&nbsp;|&nbsp;<font style="color: #3498DB">高级工程师</font></span>
@@ -299,7 +299,7 @@
             <div class="show-pic" ><img class="pic-scale" src="images/chenzhen.png" ></div>
             <div class="show-words">
                 <div class="text-left" >
-                    生产日期：1988年。规格：软件开发。使用年限：不详。产地：湖南岳阳。很多人说做软件的一般属于闷闷的那种类型<span class="omit" data-toggle="popover" data-placement="bottom" data-content="陈振，高级技术大牛，
+                    生产日期：1988年。规格：软件开发。使用年限：不详。产地：湖南岳阳。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="陈振，高级技术大牛，
 花名北极星，
 生产日期：1988年。规格：软件开发。使用年限：不详。产地：湖南岳阳。很多人说做软件的一般属于闷闷的那种类型，好吧，我承认，我不算闷闷的类型，但是我绝对是软件一员。因为我能做到软件工程师的玩命工作，也能做到玩命的娱乐。也许是因为IQ不高，所以只能用努力来弥补，也许是因为EQ不高，所以只能用心去交流。我就是一个简单的我,一个真实的我, 一个平凡的人,可是总有一天我会让你们发现我的不平凡。
 2014年加入海德在线，成为核心的创始团队成员之一。"><strong>[......]</strong></span></div>
@@ -309,9 +309,9 @@
             <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">罗焕军</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >眼镜蛇</font>&nbsp;|&nbsp;<font style="color: #3498DB">首席设计师</font></span>
             </div>
-            <div class="show-pic" ><img src="images/luohuanjun.png" ></div>
+            <div class="show-pic" ><img class="pic-scale" src="images/luohuanjun.png" ></div>
             <div class="show-words">
-                <p class="text-left">来自于爽爽的贵州、出生日期不详、略有艺术细菌。 20岁的ID，承载着30岁的UI。 生活模式是个活泼开朗，爱好广泛的闷骚男。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="
+                <p class="text-left">来自于爽爽的贵州、出生日期不详、略有艺术细菌。 20岁的ID，承载着30岁的UI。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="
 罗焕军,首席创意设计师,
 花名眼镜蛇,
 来自于爽爽的贵州、出生日期不详、略有艺术细菌。 20岁的ID，承载着30岁的UI。 生活模式是个活泼开朗，爱好广泛的闷骚男。 工作模式是个认真负责，注重细节，有强迫症的完美主义者。 传说，世界上有三种奇特的体质。 一、如何都吃不胖。 二、如何看电脑玩手机都不会瞎。 三、如何吃辣上火都不冒痘。 我就是集以上三种特质于一身的那个人神。哈哈哈！
@@ -319,25 +319,14 @@
                 </p>
             </div>
         </div>
-        <div class="person-show" >
-            <div class="show-title" >
-                <span><strong style="color: #ffa54a;font-size: 18px;">徐昂</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >福特</font>&nbsp;|&nbsp;<font style="color: #3498DB">战略副总监</font></span>
-            </div>
-            <div class="show-pic" ><img src="images/xuhang.png" ></div>
-            <div class="show-words">
-                <p class="text-left">作为汽车互联网公司的资深从业者，有过几次的创业成功经验。擅长公司战略梳理、战略执行及系统建设，擅长O2O项目运营管理<span class="omit" data-toggle="popover" data-placement="bottom" data-content="徐昂,战略推进负责人兼任BD线下商务拓展总监
-花名福特,
-作为汽车互联网公司的资深从业者，有过几次的创业成功经验。擅长公司战略梳理、战略执行及系统建设，擅长O2O项目运营管理。
-2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
-            </div>
-        </div>
+
         <div class="person-show" >
             <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">付伟</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >天籁</font>&nbsp;|&nbsp;<font style="color: #3498DB">管理中心总监</font></span>
             </div>
-            <div class="show-pic" ><img src="images/fuwei.jpg" ></div>
+            <div class="show-pic" ><img class="pic-scale" src="images/fuwei.jpg" ></div>
             <div class="show-words">
-                <p class="text-left">服务于IT行业10多年，一直专注于人事行政工作。性情豪迈，思维活跃，善于思考。爱好诸子百家，喜欢以诸子百家的思想<span class="omit" data-toggle="popover" data-placement="bottom" data-content="付伟，代号天籁，管理中心总监，服务于IT行业10多年，一直专注于人事行政工作。性情豪迈，思维活跃，善于思考。爱好诸子百家，喜欢以诸子百家的思想，西方的管理学融于企业的行政管理。信奉以服务者的心态达到管理的要求的行政理念。
+                <p class="text-left">服务于IT行业10多年，一直专注于人事行政工作。性情豪迈，思维活跃，善于思考。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="付伟，代号天籁，管理中心总监，服务于IT行业10多年，一直专注于人事行政工作。性情豪迈，思维活跃，善于思考。爱好诸子百家，喜欢以诸子百家的思想，西方的管理学融于企业的行政管理。信奉以服务者的心态达到管理的要求的行政理念。
 "><strong>[......]</strong></span>
                 </p>
             </div>
@@ -356,7 +345,7 @@
                     特长：研究人；
 
                     参与团体：海德在线；
-                    常用交通工具：高跟鞋；
+
                    <span class="omit" data-toggle="popover" data-placement="bottom" data-content="曹美微,人力资源经理,
 花名保时捷
 姓名：曹美微
@@ -388,11 +377,11 @@
             <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">芦城市</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >捷达</font>&nbsp;|&nbsp;<font style="color: #3498DB">行政经理</font></span>
             </div>
-            <div class="show-pic" ><img src="images/luchengshi.png" ></div>
+            <div class="show-pic" ><img class="pic-scale" src="images/luchengshi.png" ></div>
             <div class="show-words">
                 <p class="text-left">芦城市,行政经理,
                     花名捷达
-                    1981年出厂，产地：湖北随州。身高180cm，体重60公斤，是正宗的长腿欧巴<span class="omit" data-toggle="popover" data-placement="bottom" data-content="芦城市,商务拓展中心,
+                    1981年出厂，产地：湖北随州。身高180cm，体重60公斤<span class="omit" data-toggle="popover" data-placement="bottom" data-content="芦城市,商务拓展中心,
 花名捷达
 1981年出厂，产地：湖北随州。身高180cm，体重60公斤，是正宗的长腿欧巴，性格上，是一个很执着的人，坚持自己认定的目标，并为之付出120%的努力，能力可以不断提升，唯有坚持才能够持续攻克每一个难关，越走越远。我最开心的事是和同事们分享每一个成功之后的喜悦，我是可乐，我喂自己袋盐。
 2014年加入海德在线，成为核心的创始团队成员之一。"><strong>[......]</strong></span></p>

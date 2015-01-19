@@ -70,9 +70,9 @@ body {
 /* index css file */
 .alert-window {
     width: 1000px;
-    height:800px;
+    height:600px;
     position: fixed;
-    top: 220px;
+    top: 170px;
     background: #808080;
     z-index: 999;
     /*background-image: url('../images/formal.jpg');*/
@@ -236,11 +236,11 @@ body {
     text-align: center;
 }
 .section-commen .person-show {
-    width: 300px;
-    height: 450px;
+    width: 250px;
+    height: 350px;
     /*margin-left: 20px;*/
     float: left;
-    margin-top: 20px;
+    margin-top: 40px;
 
 }
 .pic-center {
@@ -255,17 +255,17 @@ body {
 
 }
 .person-show .show-pic {
-    width:250px;
-    height: 250px;
+    width:200px;
+    height: 200px;
 
 }
 .pic-scale {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
 }
 .person-show .show-words {
     height: 100px;
-    width: 300px;
+    width: 200px;
     text-align: left;
     margin-top: 20px;
     color: #303030;
