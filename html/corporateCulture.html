@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/companyInfo.css">
+    <link rel="stylesheet" href="../Libs/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
+    <script>
+        $(function(){
+            var slideup = $('#slideup');
+            slideup.fadeOut(1);
+            slideup.on('click',function(){//返回顶部
+                $('html,body').animate({
+                    scrollTop: '0px'
+                }, 300);
+                return false;
+            })
+            $(window).scroll(function(){
+                var top = $(document).scrollTop()
+                if(top >= 150){
+                    $('.company-nav').css('top','0');
+                    slideup.fadeIn(300);
+                }else{
+                    $('.company-nav').css('top',170);
+                    slideup.fadeIn(300);
+                }
+                var a = $('.company-nav').find('a');
+                function setValue(Element,num){
+                    Element.each(function(){
+                        var id = $(this).data('id');
+                        if(id == num){
+                            $(this).css({'color':'#ffa54a','font-size':'20px'});
+                            $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
+                            $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
+                            return false;
+                        }
+                    })
+                }
+                if(top >400){
+                    setValue(a,1);
+                }
+                if(top >=700){
+                    setValue(a,2);
+                }
+                if(top >=1000){
+                    setValue(a,3);
+                }
+                if(top >=1300){
+                    setValue(a,4);
+                }
+                if(top >=2300){
+                    setValue(a,5);
+
+                }
+                if(top >=3400){
+                    setValue(a,6);
+                }
+                if(top >=3500){
+                    setValue(a,7);
+                }
+                if(top >=3900){
+                    setValue(a,8);
+                }
+                if(top >=4400){
+                    setValue(a,9);
+                }
+                if(top >=4900){
+                    setValue(a,10);
+                }
+            })
+
+        })
+    </script>
+</head>
+<body>
+<div class="global-nav">
+    <div class="container">
+        <div class="hadlink-logo"><a href="index.html"><img src="../images/hadlinkLOGO.png"></a> </div>
+        <div class="nav-bar" style="margin-left: 50px;">
+            <ul>
+                <li style="width: 120px; ">
+                    <a href="index.html" id="firstPage">首页</a>
+                </li>
+                <li style="width: 120px;">
+                    <a href="companyInfo.html" id="copanyInfo">公司信息</a>
+                    <ul class="company-tab" style="height:220px;padding-top: 10px;">
+                        <li> 公司介绍</a></li>
+                        <li> <a href="companyInfo.html#president" >总裁寄语</a></li>
+                        <li> <a href="companyInfo.html#devCourse" >发展历程</a></li>
+                        <li ><a href="companyInfo.html#organization" >组织结构</a></li>
+                        <li ><a href="companyInfo.html#coreGroup" >核心团队</a></li>
+                    </ul>
+                </li>
+                <li style="width: 120px;">
+                    <a href="news.html" id="news">新闻中心</a>
+                    <ul class="company-tab" style="height: 140px;padding-top: 10px;" >
+                        <li><a href="news.html#companyNews" > 公司新闻</a></li>
+                        <li><a href="news.html#industryInformation" >行业资讯</a></li>
+                        <li><a href="news.html#companyAnnounce" >企业发布</a></li>
+                    </ul>
+                </li>
+                <li style="width: 120px;border-bottom:5px solid #ff9326;">
+                    <a href="corporateCulture.html">企业文化</a>
+                    <ul class="company-tab" style="height: 380px;padding-top: 10px;">
+                        <li><a href="corporateCulture.html#corporateVision" > 企业愿景</a></li>
+                        <li><a href="corporateCulture.html#mission" >使命</a></li>
+                        <li><a href="corporateCulture.html#purpose" >宗旨</a></li>
+                        <li><a href="corporateCulture.html#value" >核心价值观</a></li>
+                        <li><a href="corporateCulture.html#culture" >文化品格</a></li>
+                        <li><a href="corporateCulture.html#product" >产品理念</a></li>
+                        <li><a href="corporateCulture.html#manage" >管理理念</a></li>
+                        <li><a href="corporateCulture.html#talent" >人才战略</a></li>
+                        <li><a href="corporateCulture.html#hadlink" >海德印象</a></li>
+                    </ul>
+                </li>
+                <li style="width: 120px;">
+                    <a href="businessSystem.html">业务体系</a>
+                    <ul class="company-tab" style="height: 180px;padding-top: 10px;">
+                        <li><a href="businessSystem.html#kaiba" >开呗</a></li>
+                        <li><a href="businessSystem.html#carNews" >98车讯</a></li>
+                        <li><a href="businessSystem.html#shenzhenBranch" >深圳分公司</a></li>
+                        <li><a href="businessSystem.html#guangzhouBranch" >广州分公司</a></li>
+                    </ul>
+                </li>
+
+                <li style="width: 120px;">
+                    <a href="investor.html">投资者关系</a>
+                    <ul class="company-tab" style="height: 140px;padding-top: 10px;" >
+                        <li ><a href="investor.html#corporateNotice" > 投资章程</a></li>
+                        <li ><a href="investor.html#companyRunReport" >投资者关系</a></li>
+                        <li ><a href="investor.html#companyManage" >公司定期专栏</a></li>
+                        <!--<li ><a href="investor.html#companyother" >其他动态</a></li>-->
+                    </ul>
+                </li>
+                <li style="width: 130px;">
+                    <a href="cooperate.html" id="cooperation">合作洽谈</a>
+                    <ul class="company-tab" style="height: 105px;width: 130px;padding-top: 10px;">
+                        <li id="navheadquarters" style="width: 120px;" ><a href="cooperate.html#headquarters" > 联系我们</a></li>
+
+                        <li id="navtalentJoin" style="width: 120px;"><a href="cooperate.html#talentJoin" >人才加盟</a></li>
+                        <!--<li id="navoperation" style="width: 120px;"><a href="cooperate.html#operation" >运营推广中心</a></li>-->
+                        <!--<li id="nav-business" style="width: 120px;"><a href="cooperate.html#business" >商务拓展中心</a></li>-->
+                        <!--<li id="navsupplyChain" style="width: 120px;"><a href="cooperate.html#supplyChain" >供应链管理中心</a></li>-->
+                        <!--<li id="navshenzhen" style="width: 120px;"><a href="cooperate.html#shenzhen" >深圳分公司</a></li>-->
+                        <!--<li id="navguangzhou" style="width: 120px;"><a href="cooperate.html#guangzhou" >广州分公司</a></li>-->
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="company-nav">
+        <ul>
+            <li id="js-corporateVision"><a data-id="1" href="#corporateVision" > 企业愿景</a></li>
+            <li id="js-mission"><a data-id="2" href="#mission" >使命</a></li>
+            <li id="js-purpose"><a data-id="3" href="#purpose" >宗旨</a></li>
+            <li id="js-value"><a data-id="4" href="#value" >核心价值观</a></li>
+            <li id="js-culture"><a data-id="5" href="#culture" >文化品格</a></li>
+            <li id="js-product"><a data-id="6" href="#product" >产品理念</a></li>
+            <li id="js-manage"><a data-id="7" href="#manage" >管理理念</a></li>
+            <li id="js-talent"><a data-id="8" href="#talent" >人才战略</a></li>
+            <li id="js-hadlink"><a data-id="9" href="#hadlink" >海德印象</a></li>
+            <!--<li id="js-forbid"><a data-id="10" href="#forbid" >高压线</a></li>-->
+        </ul>
+    </div>
+    <!--企业愿景-->
+    <div id="corporateVision" class="section-commen div-center" style="min-height: 730px;">
+        <div><img src="../images/first.png"></div>
+        <h3 style="color: #ffa54a;padding-top: 25px;">企业愿景</h3>
+        <div style="width:692px;height: 390px;margin-left: auto;margin-right: auto;padding-top: 50px; "><img src="../images/vision.png"></div>
+
+    </div>
+    <!--使命-->
+    <div id="mission" class="section-commen div-center" style="min-height: 150px;">
+        <div style="float: left"><h3 style="color: #ffa54a;padding-top: 15px;">企业使命</h3>
+            <br>
+            <p style="font-size: 20px;">让移动科技改变汽车本地生活 </p>
+        </div>
+        <div style="width: 27%;float: right;padding-top: 20px;">
+            <img src="../images/mission.png">
+        </div>
+    </div>
+    <!--宗旨-->
+    <div id="purpose" class="section-commen div-center" style="min-height: 150px;">
+        <div style="float: left"><h3 style="color: #ffa54a;padding-top: 15px;">企业宗旨</h3>
+           <br>
+            <p style="font-size: 20px;">海纳百川、德行天下 </p>
+        </div>
+        <div style="width: 27%;float: right;padding-top: 20px;">
+            <img src="../images/purpose.png">
+        </div>
+
+    </div>
+    <!--核心价值观-->
+    <div id="value" class="section-commen div-center" style="height: 570px;">
+        <h3 style="color: #ffa54a;padding-top: 15px;">核心价值观</h3>
+        <!--激情-->
+        <div class="core-content">
+            <div class="core-pic"><img src="../images/passion.png"></div>
+            <div style="float: left;margin-left: 10%;width: 75%;height: auto">
+                <p style="color: #ffa54a;font-size: 18px;">激情</p>
+                <p>当你进入公司的那一刻起，是否有非常振奋的情绪、可否激发起您的平静心情。 当你完成一件事情时，是否雀跃兴奋、喜悦自信。 当你听完我们的梦想以及规划后，是否对前景充满希望与渴求的美好祈盼和动力。 当你对所有的事物不再有任何兴趣的时候，也就是您离开这个组织的时候。 激情；它具有魔力与吸引力，吸引着无敉的人去爆发、爆发、爆发、爆发这激情。</p>
+            </div>
+        </div>
+        <!--创新-->
+        <div class="core-content" style="margin-top: 50px;">
+            <div class="core-pic"><img src="../images/innovate.png"></div>
+            <div style="float: left;margin-left: 10%;width: 75%;height: auto">
+                <p style="color: #ffa54a;font-size: 18px;">创新</p>
+                <p>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。颠覆传统，敢于否定自己，努力尝试新的思维我们极为重视重大的、全新的、有意义的、贴近工作目标的创新；做一个敢想，而且是毫无边际的大胆畅想的人。我们都要提醒自己善于发现，敢于怀疑，学会变通，超越经验。 </p>
+
+            </div>
+        </div>
+        <!--价值-->
+        <div class="core-content" style="margin-top: 50px;">
+            <div class="core-pic"><img src="../images/value.png"></div>
+            <div style="float: left;margin-left: 10%;width: 75%;height: auto">
+                <p style="color: #ffa54a;font-size: 18px;">价值</p>
+                <p>劳动是一切价值的唯一源泉，而决定事物生存与发展的根本前途的决定性因素不是该事物的投入产出比，而是该事物的价值率，决定人对于事物的根本态度的决定性因素也不是该事物的投入产出比，还是该事物的价值率。由此，衡量自我价值的唯一标准，就是自我价值率，实实在在地增强自己生存与发展的能力，不断追求自身生存与发展的能力，就是不断提升自我价值的过程。  </p>
+
+            </div>
+        </div>
+    </div>
+    <!--文化品格-->
+    <div id="culture" class="section-commen div-center" style="height: 950px;">
+        <h3 style="color: #ffa54a;padding-top: 15px;">文化品格</h3>
+        <div class="core-content" style="margin-top: 50px;">
+            <div class="core-pic"><img src="../images/sincerity.png"></div>
+            <div style="float: left;margin-left: 10%;width: 75%;height: auto">
+                <p style="color: #ffa54a;font-size: 18px;">真诚</p>
+                <p>海德在线是一个真诚的企业。
+                    真心实意，坦诚相待，海德在线在发展历程中，始终坚持这一基本点。真诚是我们海德在线最宝贵的财富，我们怀着一颗真诚的心经营公司，用真诚的态度组建我们的团队，用真诚的情怀去开发我们的产品，真诚是我们最大的骄傲，是我们获得外埠投资最重要的筹码之一。
+                </p>
+            </div>
+        </div>
+        <div class="core-content" style="margin-top: 50px;">
+            <div class="core-pic"><img src="../images/inclusion.png"></div>
+            <div style="float: left;margin-left: 10%;width: 75%;height: auto">
+                <p style="color: #ffa54a;font-size: 18px;">包容</p>
+                <p>包容是一种胸怀，包容更是一种智慧，是一种以博大胸怀为基础的智慧，懂得包容的人姿态谦和，有着和谐的人际关系，从而使自己的工作、事业、生活顺风顺水。海德在线是一个包容的企业，是一个相互包容的团队，懂得包容在利益、得失面前不会斤斤计较，而是以大局为重。</p>
+
+
+                <p style="color: #ffa54a;font-size: 18px;">海德在线的文化DNA---鲨鱼文化</p>
+                <p>  心中有梦想,脚下才有路。与其仰天长叹上天不公,不如做一条奋力游动的鲨鱼 <img src="" >
+                    <img src="../images/hadlinkDNA.png" alt="海德基因-鲨鱼文化" class="img-rounded">
+                    <p>化短为长,闯出属于我们自己的强者之路,完成我们自己的人生跨越。</p>
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!--产品理念-->
+    <div id="product" class="section-commen div-center" style="height: 170px;">
+        <h3 style="color: #ffa54a;padding-top: 25px;">产品理念</h3>
+        <p style="color: #ffa54a;font-size: 18px;">把用户体验做到极致，超出用户期望的价值体验</p>
+        <p>海德在线永远把用户放在首位，研发出让用户尖叫的产品，是我们不倦的追求。</p>
+    </div>
+    <!--管理理念-->
+    <div id="manage" class="section-commen div-center" style="height: 380px;">
+        <h3 style="color: #ffa54a;padding-top: 15px;">管理理念</h3>
+        <p style="color: #ffa54a;font-size: 18px;">以人为本,结果导向</p>
+        <p>海德在线永远把用户放在首位，研发出让用户尖叫的产品，是我们不倦的追求。</p>
+        <div style="width: 40%;float: left;">
+            <div style="width: 50%;float: left">
+                <p style="color: #ffa54a;font-size: 20px;padding-top: 25px;padding-left: 15px;">客户满意度:</p>
+                <p style="font-size: 14px;padding-left: 15px;">企业存在的价值 </p>
+            </div>
+            <div style="width: 50%;float: left;margin-top: 20px;">
+                <img src="../images/enterprisesatisfaction.png">
+            </div>
+
+        </div>
+        <div style="width: 40%;float: left;">
+            <div style="width: 50%;float: left">
+                <p style="color: #ffa54a;font-size: 20px;padding-top: 25px;padding-left: 15px;">内部流程:</p>
+                <p style="font-size: 14px;padding-left: 15px;">企业运行的效率 </p>
+            </div>
+            <div style="width: 50%;float: left;margin-top: 20px;">
+                <img src="../images/internalprocess.png">
+            </div>
+
+        </div>
+        <div style="width: 40%;float: left;">
+            <div style="width: 50%;float: left">
+                <p style="color: #ffa54a;font-size: 20px;padding-top: 25px;padding-left: 15px;">学习成长:</p>
+                <p style="font-size: 14px;padding-left: 15px;">企业长青的基础 </p>
+            </div>
+            <div style="width: 50%;float: left;margin-top: 20px;">
+                <img src="../images/learndev.png">
+            </div>
+
+        </div>
+        <div style="width: 40%;float: left;">
+            <div style="width: 50%;float: left">
+                <p style="color: #ffa54a;font-size: 20px;padding-top: 25px;padding-left: 15px;">财务指标:</p>
+                <p style="font-size: 18px;padding-left: 15px;">股东投资的意义 </p>
+            </div>
+            <div style="width: 50%;float: left;margin-top: 20px;">
+                <img src="../images/finance.png">
+            </div>
+
+        </div>
+        
+    </div>
+    <!--人才战略-->
+    <div id="talent" class="section-commen div-center" style="height: 480px;">
+        <h3 style="color: #ffa54a;padding-top: 20px;">人才战略</h3>
+        <p style="color: #ffa54a;font-size: 18px;">1）核心职能——资深化 </p>
+        <p>高层团队全部具有资深互联网行业知名企业背景（阿里、腾讯、百度、京东、美团、猫屋等） </p>
+        <p style="color: #ffa54a;font-size: 18px;">2）关键职能——专业化  </p>
+        <p>各关键职能全部为各领域的专业技术人才  </p>
+        <p style="color: #ffa54a;font-size: 18px;">3）基础职能——草根—精英化  </p>
+        <p>各基础职能不拘一格，认同公司，即使是菜鸟，也会培养成海德精英 </p>
+
+        <p style="color: #ffa54a;font-size: 18px;">4）年龄结构——年轻化  </p>
+        <p>各基础职能不拘一格，认同公司，即使是菜鸟，也会培养成海德精英 </p>
+        <p style="color: #ffa54a;font-size: 18px;">在年龄结构合理化的基础上，建立年轻的，富有激情和活力（互联网思维）的团队  </p>
+        <p>各基础职能不拘一格，认同公司，即使是菜鸟，也会培养成海德精英 </p>
+        <p style="color: #ffa54a;font-size: 18px;">5）思维结构——海德化 </p>
+        <p>以海德独有的文化，塑造出开放、活力、激情、创新、追求自我价值实现的海德人</p>
+
+    </div>
+    <!--海德印象-->
+    <div id="hadlink" class="section-commen div-center" style="height: 530px;">
+        <h3 style="color: #ffa54a;padding-top: 15px;">海德印象</h3>
+        <div class="column-pic" style="margin: 0" >
+            <img src="../images/celebrate.png">
+        </div>
+        <div class="column-pic" >
+            <img src="../images/carfriend01.jpg">
+        </div>
+        <div class="column-pic" >
+            <img src="../images/carfriend.jpg">
+        </div>
+        <div class="column-pic" style="margin: 15px 0 0 0;">
+            <img src="../images/move.jpg">
+        </div>
+        <div class="column-pic" style="margin-top: 15px;margin-left: 30px;">
+            <img src="../images/think2.png">
+        </div>
+        <div class="column-pic" style="margin-top: 15px;margin-left: 30px;" >
+            <img src="../images/think3.png">
+        </div>
+    </div>
+    <!--高压线-->
+    <div id="forbid" class="section-commen div-center" style="height: 300px;display: none">
+        <h3 style="color: #ffa54a;">高压线</h3>
+        <ul>
+            <li>不得从事与本公司工作无关的其他任何事情 </li>
+            <li>不得泄露与公司有关的（包括保密协议规定范围）任何机密 </li>
+            <li>不得危及公司核心利益</li>
+            <li>不得触及职业道德底线 </li>
+            <li>不得触犯国家法律法规</li>
+            <li>一经发现查出，立即予以开除 。并追究因此为公司造成的损失以及潜在损失。情节严重的将    追究其法律责任。</li>
+        </ul>
+    </div>
+
+</div>
+<div class="global-footer" style=" background: #666666;">
+    <div class="footer-content">
+        <div class="section-one">
+            <center><h3 class="h-set">企业核心价值</h3></center>
+
+            <p style="color: #cacaca;"><strong >激情:</strong><font style="color: #cacaca;" >它具有魔力与吸引力，吸引着无数的人去爆发、爆发、爆发、爆发这激情。</font></p>
+
+            <p style="color: #cacaca; padding-top: 10px;"><strong>创新:</strong>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。</p>
+
+            <p style="color: #cacaca;padding-top: 10px;"><strong>价值:</strong>海德在线是一个有共同目标，共同价值观的社会团体，如何衡量个人对于海德在线的价值，取决于每个人对于这个"社会"的贡献度。</p>
+        </div>
+        <div class="section-two">
+            <ul>
+                <center><h3 class="h-set">公司信息</h3></center>
+                <li><a href="companyInfo.html#companyIntro" >海德简介</a></li>
+                <li><a href="companyInfo.html#president" >总裁致辞</a></li>
+                <li><a href="companyInfo.html#devCourse" >发展历程</a></li>
+                <li><a href="companyInfo.html#organization">组织结构</a></li>
+                <li><a href="companyInfo.html#coreGroup" >核心团队</a></li>
+            </ul>
+        </div>
+        <div class="section-two">
+            <ul>
+                <center><h3 class="h-set">业务体系</h3></center>
+                <li><a href="businessSystem.html#kaiba" >开呗</a></li>
+                <li><a href="businessSystem.html#carNews" >98车讯</a></li>
+                <li><a href="businessSystem.html#shenzhenBranch" >深圳分公司</a></li>
+                <li><a href="businessSystem.html#guangzhouBranch" >广州分公司</a></li>
+            </ul>
+        </div>
+        <div class="section-two">
+            <ul>
+                <center><h3 class="h-set">企业文化</h3></center>
+                <li><a href="corporateCulture.html#corporateVision" >愿景</a></li>
+                <li><a href="corporateCulture.html#mission" >使命</a></li>
+                <li><a href="corporateCulture.html#purpose" >企业宗旨</a></li>
+                <li><a href="corporateCulture.html#value" targetdiv="div5">核心价值观</a></li>
+                <li><a href="corporateCulture.html#culture" targetdiv="div1">文化品格</a></li>
+                <li><a href="corporateCulture.html#product" targetdiv="div2">产品理念</a></li>
+                <li><a href="corporateCulture.html#talent" targetdiv="div4">人才策略</a></li>
+                <li><a href="corporateCulture.html#hadlink" targetdiv="div5">海德印象</a></li>
+                <li><a href="corporateCulture.html#forbid" targetdiv="div5">高压线</a></li>
+            </ul>
+        </div>
+        <div class="section-two">
+            <ul>
+                <center><h3 class="h-set">投资者关系</h3></center>
+                <li><a href="investor.html#corporateNotice" >公司公告</a></li>
+                <li><a href="investor.html#companyRunReport">经营报告</a></li>
+                <li><a href="investor.html#companyManage">公司治理</a></li>
+                <li><a href="investor.html#companyother">其他动态</a></li>
+            </ul>
+        </div>
+        <div class="section-two">
+            <ul>
+                <center><h3 class="h-set">合作洽谈</h3></center>
+                <li><a href="cooperate.html#headquarters">海德在线</a></li>
+                <li><a href="cooperate.html#talentJoin">人才加盟</a></li>
+                <li><a href="cooperate.html#operation">运行推广中心</a></li>
+                <li><a href="cooperate.html#business" >商务拓展中心</a></li>
+                <li><a href="cooperate.html#supplyChain" >供应链管理中心</a></li>
+                <li><a href="cooperate.html#shenzhenBranch">深圳分公司</a></li>
+                <li><a href="cooperate.html#guangzhou">广州分公司</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-copyright" style="color: #ffffff"><div style="margin-top: 50px;"><center><h4>Copyright@2015 深圳市海德在线有限公司版权所有</h4> </center></div></div>
+</div>
+<div id="slideup" title="返回顶部" class="slideup"></div>
+
+</body>
+</html>
