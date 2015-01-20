@@ -25,6 +25,21 @@ body {
     text-align: left;
     float: left;
 }
+.section-one li {
+    width: 120px;
+    list-style: none;
+    margin-top: 16px;
+    margin-left: 50px;
+}
+.section-one a {
+    text-decoration: none;
+    color: #cacaca;
+    font-size: 17px;
+}
+.section-one li a:hover {
+    background: #ff9326;
+    text-decoration: none;
+}
 .global-footer .section-two {
     padding-top: 100px;
     width: 130px;
@@ -72,7 +87,7 @@ body {
     width: 1000px;
     height:600px;
     position: fixed;
-    top: 170px;
+    top: 220px;
     background: #808080;
     z-index: 999;
     /*background-image: url('../images/formal.jpg');*/
@@ -313,8 +328,10 @@ body {
     height: 40px;
     /*background-image: url('../images/backtop.png')*/
 }
-.slideup-active {
-    background: #95A5A6;
+.slideup:hover {
+    /*width: 41px;*/
+    /*height: 81px;*/
+    opacity: 0.8;
 }
 .omit {
     color:#3498DB;

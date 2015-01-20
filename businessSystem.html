@@ -60,7 +60,7 @@
                     $('.business-nav').css('top','0');
                     slideup.fadeIn(100);
                 }else{
-                    $('.business-nav').css('top',170);
+                    $('.business-nav').css('top',220);
                     slideup.fadeOut(300);
                 }
                 var a = $('.business-nav').find('a');
@@ -96,8 +96,11 @@
     </script>
 </head>
 <body>
-<div class="global-fluid" style="background: #eaeaea;">
-
+<div class="global-fluid" style="background: #eaeaea;height: 220px;">
+    <div class="global-bar">
+        <div class="lore">
+        </div>
+    </div>
     <div class="had-container">
         <div class="global-nav">
             <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
@@ -247,11 +250,14 @@
         <div class="global-footer">
             <div class="had-container">
                 <div class="section-one">
-                    <center><p class="title-font">企业核心价值</p></center>
-                    <p style="color: #cacaca;"><strong >激情:</strong><font style="color: #cacaca;" >它具有魔力与吸引力，吸引着无数的人去爆发、爆发、爆发、爆发这激情。</font></p>
-                    <p style="color: #cacaca; padding-top: 10px;"><strong>创新:</strong>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。</p>
+                    <ul >
+                        <center><p class="title-font">企业核心价值</p></center>
+                        <li style="margin-top: 0;"><a href="corporateCulture.html#value" >激&nbsp;&nbsp;&nbsp;&nbsp;情</a></li>
 
-                    <p style="color: #cacaca;padding-top: 10px;"><strong>价值:</strong>海德在线是一个有共同目标，共同价值观的社会团体，如何衡量个人对于海德在线的价值，取决于每个人对于这个"社会"的贡献度。</p>
+                        <li ><a href="corporateCulture.html#value" >创&nbsp;&nbsp;&nbsp;&nbsp;新</a></li>
+
+                        <li ><a href="corporateCulture.html#value" >价&nbsp;&nbsp;&nbsp;&nbsp;值</a></li>
+                    </ul>
                 </div>
                 <div class="section-two">
                     <ul>
@@ -314,7 +320,7 @@
         </div>
     </div>
 </div>
-<div id="slideup" title="返回顶部" class="slideup"></div>
+<div id="slideup" title="返回顶部" class="slideup"><img src="images/backtop.png"></div>
 
 </body>
 </html>
