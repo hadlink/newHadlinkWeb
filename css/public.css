@@ -88,7 +88,7 @@ body {
     width: 1000px;
     height:600px;
     position: fixed;
-    top: 220px;
+    top: 170px;
     background: #808080;
     z-index: 999;
     /*background-image: url('../images/formal.jpg');*/
@@ -163,6 +163,7 @@ body {
     min-height: 200px;
     background: #ececec;
     position: fixed;
+    top: 250;
 
 }
 .news-nav {
@@ -415,14 +416,21 @@ body {
     }
 }
 .bread-crumbs {
-    width:100px;
-    height:42px;
+    /*width:100px;*/
+    /*height:42px;*/
     vertical-align:bottom;
     font-size: 17px;
     color: #2C3E50;
-    margin-left: 15px;
+    /*margin-left: 15px;*/
 }
 .bread-crumbs:hover {
     /*background: #ff9326;*/
     text-decoration: none;
+}
+.news-center {
+    margin-left: 65px;
+    margin-top: 20px;
+}
+.bottom-active {
+    border-bottom: 5px solid #ffa54a ;
 }

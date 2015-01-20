@@ -39,12 +39,12 @@
     width: 798px;
     height: 40px;
     line-height: 40px;
-    padding-top: 130px;
+    padding-top: 129px;
     float: left;
     position: relative;
 
 }
-.nav-bar  li {
+.nav-bar li {
     list-style: none;
     float: left;
     width: 105px;
@@ -52,6 +52,7 @@
     text-align: center;
     line-height: 40px;
 }
+
 
 .nav-bar  a {
     display: block;
@@ -62,7 +63,7 @@
     color: #2C3E50;
 }
 .nav-bar li a:hover {
-    /*color: #fff;*/
+    color: #ffffff;
     text-decoration: none;
 }
 .nav-bar >li:hover {
