@@ -21,10 +21,20 @@
                 }, 300);
                 return false;
             });
-
+            function setValue(Element,num){
+                Element.each(function(){
+                    var id = $(this).data('id');
+                    if(id == num){
+                        $(this).css({'color':'#ffa54a','font-size':'20px'});
+                        $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
+                        $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
+                        return false;
+                    }
+                })
+            }
             $("[data-toggle='popover']").popover();
-            $(window).scroll(function(){
-                var top = $(document).scrollTop()
+            $(document).scroll(function(){
+                var top = $(document).scrollTop();
                 if(top >= 150){
                     $('.company-nav').css('top','0');
                     slideup.fadeIn(300);
@@ -32,19 +42,7 @@
                     $('.company-nav').css('top',220);
                     slideup.fadeOut(300);
                 }
-
                 var a = $('.company-nav').find('a');
-                function setValue(Element,num){
-                    Element.each(function(){
-                        var id = $(this).data('id');
-                        if(id == num){
-                            $(this).css({'color':'#ffa54a','font-size':'20px'});
-                            $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
-                            $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
-                            return false;
-                        }
-                    })
-                }
                 if(top >100){
                     setValue(a,1);
                 }

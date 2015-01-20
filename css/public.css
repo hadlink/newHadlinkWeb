@@ -75,12 +75,13 @@ body {
     float: left;
 }
 .column-pic {
-    width: 280px;
+    width: 250px;
     height: 200px;
-    background: #ffa54a;
+    /*background: #ffa54a;*/
     float: left;
+    padding-top: 10px;
     margin-left: 30px;
-
+    /*overflow: hidden;*/
 }
 /* index css file */
 .alert-window {
@@ -277,6 +278,10 @@ body {
 .pic-scale {
     width: 90%;
     height: 90%;
+}
+.pic-scale-y {
+    width: 98%;
+    height: 98%;
 }
 .person-show .show-words {
     height: 100px;

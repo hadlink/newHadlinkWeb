@@ -21,8 +21,19 @@
                 }, 300);
                 return false;
             })
+            function setValue(Element,num){
+                Element.each(function(){
+                    var id = $(this).data('id');
+                    if(id == num){
+                        $(this).css({'color':'#ffa54a','font-size':'20px'});
+                        $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
+                        $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
+                        return false;
+                    }
+                })
+            }
             $(window).scroll(function(){
-                var top = $(document).scrollTop()
+                var top = $(document).scrollTop();
                 if(top >= 150){
                     $('.company-nav').css('top','0');
                     slideup.fadeIn(300);
@@ -31,17 +42,6 @@
                     slideup.fadeOut(300);
                 }
                 var a = $('.company-nav').find('a');
-                function setValue(Element,num){
-                    Element.each(function(){
-                        var id = $(this).data('id');
-                        if(id == num){
-                            $(this).css({'color':'#ffa54a','font-size':'20px'});
-                            $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
-                            $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
-                            return false;
-                        }
-                    })
-                }
                 if(top >400){
                     setValue(a,1);
                 }
@@ -56,7 +56,6 @@
                 }
                 if(top >=1800){
                     setValue(a,5);
-
                 }
                 if(top >=2800){
                     setValue(a,6);
@@ -69,9 +68,6 @@
                 }
                 if(top >=3800){
                     setValue(a,9);
-                }
-                if(top >=4600){
-                    setValue(a,10);
                 }
             })
 
@@ -330,25 +326,25 @@
 
     </div>
     <!--海德印象-->
-    <div id="hadlink" class="section-commen div-center" >
+    <div id="hadlink" class="section-commen div-center" style="min-height: 550px;">
         <h3 style="color: #ffa54a;padding-top: 15px;">海德印象</h3>
         <div class="column-pic" style="margin: 0" >
-            <img src="images/celebrate.png">
+            <img class="pic-scale-y" src="images/celebrate.png">
+        </div>
+        <div class="column-pic " >
+            <img class="pic-scale-y" src="images/carfriend01.jpg">
         </div>
         <div class="column-pic" >
-            <img src="images/carfriend01.jpg">
+            <img class="pic-scale-y" src="images/carfriend.jpg">
+        </div>
+        <div class="column-pic" style="margin: 0">
+            <img class="pic-scale-y" src="images/move.jpg">
         </div>
         <div class="column-pic" >
-            <img src="images/carfriend.jpg">
+            <img class="pic-scale-y" src="images/think2.png">
         </div>
-        <div class="column-pic" >
-            <img src="images/move.jpg">
-        </div>
-        <div class="column-pic" >
-            <img src="images/think2.png">
-        </div>
-        <div class="column-pic" style="margin-top: 15px;margin-left: 30px;" >
-            <img src="images/think3.png">
+        <div class="column-pic"  >
+            <img  class="pic-scale-y" src="images/think3.png">
         </div>
     </div>
     <!--高压线-->

@@ -360,9 +360,19 @@
             }, 300);
             return false;
         })
-
+        function setValue(Element,num){
+            Element.each(function(){
+                var id = $(this).data('id');
+                if(id == num){
+                    $(this).css({'color':'#ffa54a','font-size':'20px'});
+                    $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
+                    $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
+                    return false;
+                }
+            })
+        }
         $(window).scroll(function(){
-            var top = $(document).scrollTop()
+            var top = $(document).scrollTop();
             if(top >= 150){
                 $('.coor-nav').css('top','0');
                 slideup.fadeIn(300);
@@ -371,17 +381,7 @@
                 slideup.fadeOut(300);
             }
             var a = $('.coor-nav').find('a');
-            function setValue(Element,num){
-                Element.each(function(){
-                    var id = $(this).data('id');
-                    if(id == num){
-                        $(this).css({'color':'#ffa54a','font-size':'20px'});
-                        $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
-                        $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
-                        return false;
-                    }
-                })
-            }
+
             if(top >200){
                 setValue(a,1);
             }
