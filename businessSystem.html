@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>海德在线</title>
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="Libs/bootstrap/dist/css/bootstrap.css">
@@ -54,6 +54,17 @@
                 }, 300);
                 return false;
             })
+            function setValue(Element,num){
+                Element.each(function(){
+                    var id = $(this).data('id');
+                    if(id == num){
+                        $(this).css({'color':'#ffa54a','font-size':'20px'});
+                        $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
+                        $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
+                        return false;
+                    }
+                })
+            }
             $(window).scroll(function(){
                 var top = $(document).scrollTop()
                 if(top >= 150){
@@ -64,17 +75,7 @@
                     slideup.fadeOut(300);
                 }
                 var a = $('.business-nav').find('a');
-                function setValue(Element,num){
-                    Element.each(function(){
-                        var id = $(this).data('id');
-                        if(id == num){
-                            $(this).css({'color':'#ffa54a','font-size':'20px'});
-                            $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
-                            $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
-                            return false;
-                        }
-                    })
-                }
+
                 if(top >100){
                     setValue(a,1);
                 }
@@ -96,8 +97,11 @@
     </script>
 </head>
 <body>
-<div class="global-fluid" style="background: #eaeaea;">
-
+<div class="global-fluid" style="background: #eaeaea;height: 170px;">
+    <!--<div class="global-bar">-->
+        <!--<div class="lore">-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="had-container">
         <div class="global-nav">
             <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
@@ -105,7 +109,7 @@
                 <ul class="nav-bar">
                     <li><a  href="index.html" id="firstPage">首页</a> </li>
                     <li>
-                        <a style="font-size: 18px;color: #2C3E50; " href="companyInfo.html#companyIntro" id="copanyInfo">公司信息</a>
+                        <a style="font-size: 18px;color: #2C3E50; " href="companyInfo.html" id="copanyInfo">公司信息</a>
                         <ul class="sub-nav"  style="height: 205px;">
                             <li> <a href="companyInfo.html#companyIntro">公司介绍</a></li>
                             <li> <a href="companyInfo.html#president" >总裁寄语</a></li>
@@ -136,7 +140,7 @@
                             <li><a href="corporateCulture.html#hadlink" >海德印象</a></li>
                         </ul>
                     </li>
-                    <li >
+                    <li class="bottom-active">
                         <a href="businessSystem.html">业务体系</a>
                         <ul class="sub-nav" style="height: 165px;">
                             <li><a href="businessSystem.html#kaiba" >开呗</a></li>
@@ -220,9 +224,9 @@
         <!--开呗为车主提供了一个简易、快捷、有效的车生活应用工具，全方位满足车主所需。开呗，应你而生。您身边车生活专业解决方案工具。-->
 
         <div style="float: right;padding-top: 10px;">
-            <a href="http://ikaibei.com" target="_blank"><img src="images/kaibeilogo.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http:///www.91czs.com" target="_blank"><img src="images/kaibeilogo.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="http://ikaibei.com" target="_blank"><img src="images/erweima.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="http://www.91czs.com" target="_blank"><img src="images/erweima.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </div>
     <!--98车讯-->
@@ -247,11 +251,14 @@
         <div class="global-footer">
             <div class="had-container">
                 <div class="section-one">
-                    <center><p class="title-font">企业核心价值</p></center>
-                    <p style="color: #cacaca;"><strong >激情:</strong><font style="color: #cacaca;" >它具有魔力与吸引力，吸引着无数的人去爆发、爆发、爆发、爆发这激情。</font></p>
-                    <p style="color: #cacaca; padding-top: 10px;"><strong>创新:</strong>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。</p>
+                    <ul >
+                        <center><p class="title-font">企业核心价值</p></center>
+                        <li style="margin-top: 0;"><a href="corporateCulture.html#value" >激&nbsp;&nbsp;&nbsp;&nbsp;情</a></li>
 
-                    <p style="color: #cacaca;padding-top: 10px;"><strong>价值:</strong>海德在线是一个有共同目标，共同价值观的社会团体，如何衡量个人对于海德在线的价值，取决于每个人对于这个"社会"的贡献度。</p>
+                        <li ><a href="corporateCulture.html#value" >创&nbsp;&nbsp;&nbsp;&nbsp;新</a></li>
+
+                        <li ><a href="corporateCulture.html#value" >价&nbsp;&nbsp;&nbsp;&nbsp;值</a></li>
+                    </ul>
                 </div>
                 <div class="section-two">
                     <ul>
@@ -297,13 +304,8 @@
                 <div class="section-two">
                     <ul>
                         <center><p class="title-font">合作洽谈</p></center>
-                        <li><a href="cooperate.html#headquarters">海德在线</a></li>
+                        <li><a href="cooperate.html#headquarters">联系我们</a></li>
                         <li><a href="cooperate.html#talentJoin">招贤纳士</a></li>
-                        <li><a href="cooperate.html#operation">运行推广中心</a></li>
-                        <li><a href="cooperate.html#business" >商务拓展中心</a></li>
-                        <li><a href="cooperate.html#supplyChain" >供应链管理中心</a></li>
-                        <li><a href="cooperate.html#shenzhenBranch">深圳分公司</a></li>
-                        <li><a href="cooperate.html#guangzhou">广州分公司</a></li>
                     </ul>
                 </div>
             </div>
@@ -314,7 +316,7 @@
         </div>
     </div>
 </div>
-<div id="slideup" title="返回顶部" class="slideup"></div>
+<div id="slideup" title="返回顶部" class="slideup"><img src="images/backtop.png"></div>
 
 </body>
 </html>

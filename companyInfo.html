@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>海德在线</title>
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="Libs/bootstrap/dist/css/bootstrap.min.css">
@@ -14,17 +14,27 @@
     <script>
         $(function(){
             var slideup = $('#slideup');
-
+            slideup.fadeOut(300);
             slideup.on('click',function(){//返回顶部
                 $('html,body').animate({
                     scrollTop: '0px'
                 }, 300);
                 return false;
             });
-
+            function setValue(Element,num){
+                Element.each(function(){
+                    var id = $(this).data('id');
+                    if(id == num){
+                        $(this).css({'color':'#ffa54a','font-size':'20px'});
+                        $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
+                        $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
+                        return false;
+                    }
+                })
+            }
             $("[data-toggle='popover']").popover();
-            $(window).scroll(function(){
-                var top = $(document).scrollTop()
+            $(document).scroll(function(){
+                var top = $(document).scrollTop();
                 if(top >= 150){
                     $('.company-nav').css('top','0');
                     slideup.fadeIn(300);
@@ -32,19 +42,7 @@
                     $('.company-nav').css('top',170);
                     slideup.fadeOut(300);
                 }
-
                 var a = $('.company-nav').find('a');
-                function setValue(Element,num){
-                    Element.each(function(){
-                        var id = $(this).data('id');
-                        if(id == num){
-                            $(this).css({'color':'#ffa54a','font-size':'20px'});
-                            $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
-                            $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
-                            return false;
-                        }
-                    })
-                }
                 if(top >100){
                     setValue(a,1);
                 }
@@ -66,17 +64,21 @@
 </head>
 <body>
 <!--顶部导航-->
-<div class="global-fluid" style="background: #eaeaea;">
+
+<div class="global-fluid" style="background: #eaeaea;height: 170px;">
+    <!--<div class="global-bar">-->
+        <!--<div class="lore"></div>-->
+    <!--</div>-->
     <div class="had-container">
         <div class="global-nav">
             <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
             <div >
                 <ul class="nav-bar">
                     <li><a  href="index.html" id="firstPage">首页</a> </li>
-                    <li>
-                        <a style="font-size: 18px;color: #2C3E50; " href="companyInfo.html#companyIntro" id="copanyInfo">公司信息</a>
+                    <li class="bottom-active">
+                        <a  href="companyInfo.html#companyIntro" id="copanyInfo">公司信息</a>
                         <ul class="sub-nav"  style="height: 205px;">
-                            <li><a href="companyInfo.html#companyIntro"> 公司介绍</a></li>
+                            <li><a href="companyInfo.html"> 公司介绍</a></li>
                             <li> <a href="companyInfo.html#president" >总裁寄语</a></li>
                             <li> <a href="companyInfo.html#devCourse" >发展历程</a></li>
                             <li ><a href="companyInfo.html#organization" >组织结构</a></li>
@@ -120,14 +122,12 @@
                             <li  style="width: 140px;"><a href="investor.html#corporateNotice" > 投资章程</a></li>
                             <li  style="width: 140px;"><a href="investor.html#companyRunReport" >投资者关系</a></li>
                             <li  style="width: 140px;"><a href="investor.html#companyManage" >公司定期专栏</a></li>
-                            <!--<li ><a href="investor.html#companyother" >其他动态</a></li>-->
                         </ul>
                     </li>
                     <li >
                         <a href="cooperate.html" id="cooperation">合作洽谈</a>
                         <ul class="sub-nav" style="height: 90px;">
                             <li id="navheadquarters"  ><a href="cooperate.html#headquarters" > 联系我们</a></li>
-
                             <li id="navtalentJoin"><a href="cooperate.html#talentJoin" >招贤纳士</a></li>
 
                         </ul>
@@ -168,21 +168,38 @@
 
     </div>
     <!--总裁寄语-->
-    <div id="president" class="section-ceo div-center"  style="margin-top: 40px;height: 750px; ">
+    <div id="president" class="section-ceo div-center"  style="margin-top: 40px;min-height: 1090px; ">
         <h3 class="p-h3">总裁寄语</h3>
         <div class="word-pic pic-center"><img src="images/ceo.png"></div>
         <div class="pic-intro pic-center">
             <p><strong>程平</strong></p>
             <p><strong>海德在线董事长兼CEO</strong></p>
         </div>
-        <p class="p-low" style="padding-top: 15px;">“海纳百川，德行天下”这句简单、传递出一个强有力的声音，那就是凡成大事者，必定拥有良好的心态及远大的格局，并且还需谨记《朱子治家格言》“德不配位”“必有灾殃”。任何企业都不可能比人的“心”还要强大，比人的“德”还重要，因为是“人”给予企业生命，“德”赋予企业灵魂。</p>
-        <br>
-        <p class="p-low">企业自身不能创造产品、不能提供服务、也不能解决问题，但“人”可以，“人”才是海德在线之根本，是企业实现可持续发展的核心竞争力。：</p>
+        <p class="p-low" style="padding-top: 15px;">海纳百川，德行天下
+        这句简单、但每一位海德在线同仁都非常熟悉的话，传递出一个强有力的声音，那就是凡成大事者，必定拥有良好的心态以及远大的格局，并且还需谨记《朱子治家格言》"德不配位""必有灾殃"。任何企业都不可能比人的"心"还要强大，比人的"德"还重要，因为是"人"给予企业生命，"德"赋予企业灵魂。而企业自身不能创造产品、不能提供服务、也不能解决问题，但"人"可以，"人"才是海德在线之根本，是企业实现可持续发展的核心竞争力。
+        <p>海德在线的同仁们：
+        <p class="p-low">在科技日新月异，经济飞速发展的今天，计算机和互联网尤其是移动互联网的高速发展，给我们周围的生活带来了巨大的影响和变化。而这些高速发展和变化、将改变现有的汽车售后市场格局以及汽车本地生活服务产业。我在感受这种发展和变化的同时，为自己有幸领导、参与构建"汽车全生命周期、线上线下贯通的信息消费服务生态"的梦想而激动不已。
 
-        <p class="p-low">在科技日新月异，经济飞速发展的今天，计算机和互联网尤其是移动互联网的高速发展，给我们周围的生活带来了巨大的影响和变化。而这些高速发展和变化、将改变现有的汽车售后市场格局以及汽车本地生活服务产业。我在感受这种发展和变化的同时，为自己有幸领导、参与构建“汽车全生命周期、线上线下贯通的信息消费服务生态”的梦想而激动不已。</p>
+        <p class="p-low"> 我和我的团队凭借对中国移动互联网和汽车产业发展的巨大信心，凭借对国内外汽车服务市场的深入了解，并试图先期把海德在线旗下品牌"开呗"、打造成为"中国最具活力的车生活服务平台"。
+        <p> 伙伴们：
+        <p class="p-low">这是消费者的时代、更是注重体验的时代——"我的消费，我做主"
+        <p class="p-low">这是资源大整合的时代、更是强强联手抱团打天下、得资源者得天下的时代。
+        <p class="p-low">这是大数据时代，更是注重专业比能力更强的时代。
+        <p class="p-low">没有做不到，只有想不到！！！     我们这是一次伟大的创业，更准确说是一场伟大的消费革命，一场颠覆所有车主日常消费行为习惯的革命，一场颠覆所有汽车服务商提供服务模式的革命。从历史的发展轨迹来看，每一次轰轰烈烈的革命行动，首先碰到的总是一些毫无准备的对手，总是让革命者轻而易举的攻城掠地，这也是每次革命能够不断发展壮大的原因。
+
+        <p class="p-low">章子怡在她的电影《非常幸运》有一句台词: "生活值得去冒险＂
+        <p class="p-low"> 马云说过："梦想还是要有的，万一实现了呢？"
+        <p class="p-low"> 是的，不去尝试一下，如何知道未来能成功？
+        <p class="p-low"> 我们共同迎来了时代的转折点，恭喜你，你已经已经站在了走向成功的门槛上，驶向自己的未来。
+
+        <!--<p class="p-low" style="padding-top: 15px;">“海纳百川，德行天下”这句简单、传递出一个强有力的声音，那就是凡成大事者，必定拥有良好的心态及远大的格局，并且还需谨记《朱子治家格言》“德不配位”“必有灾殃”。任何企业都不可能比人的“心”还要强大，比人的“德”还重要，因为是“人”给予企业生命，“德”赋予企业灵魂。</p>-->
+        <!--<br>-->
+        <!--<p class="p-low">企业自身不能创造产品、不能提供服务、也不能解决问题，但“人”可以，“人”才是海德在线之根本，是企业实现可持续发展的核心竞争力。：</p>-->
+
+        <!--<p class="p-low">在科技日新月异，经济飞速发展的今天，计算机和互联网尤其是移动互联网的高速发展，给我们周围的生活带来了巨大的影响和变化。而这些高速发展和变化、将改变现有的汽车售后市场格局以及汽车本地生活服务产业。我在感受这种发展和变化的同时，为自己有幸领导、参与构建“汽车全生命周期、线上线下贯通的信息消费服务生态”的梦想而激动不已。</p>-->
 
 
-        <p class="p-low"> 我和我的团队凭借对中国移动互联网和汽车产业发展的巨大信心，凭借对国内外汽车服务市场的深入了解，坚信把海德在线旗下品牌“<font color="red"><a href="http://www.91czs.com" style="color: #ffa54a">开呗</a></font>”、打造成为“中国最具活力的车生活服务平台”。这是消费者的时代、更是注重体验的时代——“<font color="#ffa54a">我的消费，我做主</font>”。</p>
+        <!--<p class="p-low"> 我和我的团队凭借对中国移动互联网和汽车产业发展的巨大信心，凭借对国内外汽车服务市场的深入了解，坚信把海德在线旗下品牌“<font color="red"><a href="http://www.91czs.com" style="color: #ffa54a">开呗</a></font>”、打造成为“中国最具活力的车生活服务平台”。这是消费者的时代、更是注重体验的时代——“<font color="#ffa54a">我的消费，我做主</font>”。</p>-->
 
         <div style="float: right;"><img src="images/ceosign.png"></div>
 
@@ -230,21 +247,6 @@
         </div>
         <div class="person-show" >
             <div class="show-title" >
-                <span><strong style="color: #ffa54a;font-size: 18px;">刘俊</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >奥拓</font>&nbsp;|&nbsp;<font style="color: #3498DB">运营总监</font></span>
-            </div>
-            <div class="show-pic" ><img class="pic-scale" src="images/liujun.png" ></div>
-            <div class="show-words">
-                <p class="text-left">1980年&nbsp;made&nbsp;in&nbsp;china&nbsp;的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，<span class="omit" data-toggle="popover" data-placement="bottom" data-content="刘俊,运营总监,
-花名奥拓,
-1980年 made in china 的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，身高嘛，除了精华点，也没有啥特点。好不容易熬到20来岁出头，混了个本科文凭。从此踏上了江湖，成为了攻城狮，熬了个一年半载，感觉没啥奔头，于是乎俺决定要做高大上的运营，以为从此逼格腾飞，冲上九宵。十几年熬下来，发现俺还是那个1024G纯吊丝。至于兴趣爱好嘛，很多：看书、K歌、打球、疯~~（信息量过大，此处省略1万字…）。 
-目前创建海德在线后，俺还是干俺的老本行——负责运营工作。和我们牛B的神队友们（其实有很多酒鬼和吃货）共同熬工作、熬生活。我们为了同一个伟大的梦想，痛并快乐着。我们一定是“不飞则已、一飞冲天，不鸣则已，一鸣惊人”。
-2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
-            </div>
-        </div>
-
-
-        <div class="person-show" >
-            <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">钟其灵</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >马丁</font>&nbsp;|&nbsp;<font style="color: #3498DB">研发高级经理</font></span>
             </div>
             <div class="show-pic" ><img class="pic-scale" src="images/zhongqilin.png" ></div>
@@ -282,18 +284,6 @@
         </div>
         <div class="person-show" >
             <div class="show-title" >
-                <span><strong style="color: #ffa54a;font-size: 18px;">徐昂</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >福特</font>&nbsp;|&nbsp;<font style="color: #3498DB">战略推进总监</font></span>
-            </div>
-            <div class="show-pic" ><img class="pic-scale" src="images/xuhang.png" ></div>
-            <div class="show-words">
-                <p class="text-left">作为汽车互联网公司的资深从业者，有过几次的创业成功经验。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="徐昂,战略推进负责人兼任BD线下商务拓展总监
-花名福特,
-作为汽车互联网公司的资深从业者，有过几次的创业成功经验。擅长公司战略梳理、战略执行及系统建设，擅长O2O项目运营管理。
-2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
-            </div>
-        </div>
-        <div class="person-show" >
-            <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">陈振</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >北极星</font>&nbsp;|&nbsp;<font style="color: #3498DB">高级工程师</font></span>
             </div>
             <div class="show-pic" ><img class="pic-scale" src="images/chenzhen.png" ></div>
@@ -305,6 +295,32 @@
 2014年加入海德在线，成为核心的创始团队成员之一。"><strong>[......]</strong></span></div>
             </div>
         </div>
+        <div class="person-show" >
+            <div class="show-title" >
+                <span><strong style="color: #ffa54a;font-size: 18px;">刘俊</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >奥拓</font>&nbsp;|&nbsp;<font style="color: #3498DB">运营总监</font></span>
+            </div>
+            <div class="show-pic" ><img class="pic-scale" src="images/liujun.png" ></div>
+            <div class="show-words">
+                <p class="text-left">1980年&nbsp;made&nbsp;in&nbsp;china&nbsp;的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，<span class="omit" data-toggle="popover" data-placement="bottom" data-content="刘俊,运营总监,
+花名奥拓,
+1980年 made in china 的江西，性别：个人隐私。至于长相嘛，除了帅点没有啥特点，身高嘛，除了精华点，也没有啥特点。好不容易熬到20来岁出头，混了个本科文凭。从此踏上了江湖，成为了攻城狮，熬了个一年半载，感觉没啥奔头，于是乎俺决定要做高大上的运营，以为从此逼格腾飞，冲上九宵。十几年熬下来，发现俺还是那个1024G纯吊丝。至于兴趣爱好嘛，很多：看书、K歌、打球、疯~~（信息量过大，此处省略1万字…）。 
+目前创建海德在线后，俺还是干俺的老本行——负责运营工作。和我们牛B的神队友们（其实有很多酒鬼和吃货）共同熬工作、熬生活。我们为了同一个伟大的梦想，痛并快乐着。我们一定是“不飞则已、一飞冲天，不鸣则已，一鸣惊人”。
+2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
+            </div>
+        </div>
+        <div class="person-show" >
+            <div class="show-title" >
+                <span><strong style="color: #ffa54a;font-size: 18px;">徐昂</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >福特</font>&nbsp;|&nbsp;<font style="color: #3498DB">战略推进总监</font></span>
+            </div>
+            <div class="show-pic" ><img class="pic-scale" src="images/xuhang.png" ></div>
+            <div class="show-words">
+                <p class="text-left">作为汽车互联网公司的资深从业者，有过几次的创业成功经验。<span class="omit" data-toggle="popover" data-placement="bottom" data-content="徐昂,战略推进负责人兼任BD线下商务拓展总监
+花名福特,
+作为汽车互联网公司的资深从业者，有过几次的创业成功经验。擅长公司战略梳理、战略执行及系统建设，擅长O2O项目运营管理。
+2014年随带头大哥创建海德在线，成为核心创始团队成员之一。"><strong>[......]</strong></span></p>
+            </div>
+        </div>
+
         <div class="person-show" >
             <div class="show-title" >
                 <span><strong style="color: #ffa54a;font-size: 18px;">罗焕军</strong>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #a4a4a4;" >眼镜蛇</font>&nbsp;|&nbsp;<font style="color: #3498DB">首席设计师</font></span>
@@ -421,11 +437,14 @@
         <div class="global-footer">
             <div class="had-container">
                 <div class="section-one">
-                    <center><p class="title-font">企业核心价值</p></center>
-                    <p style="color: #cacaca;"><strong >激情:</strong><font style="color: #cacaca;" >它具有魔力与吸引力，吸引着无数的人去爆发、爆发、爆发、爆发这激情。</font></p>
-                    <p style="color: #cacaca; padding-top: 10px;"><strong>创新:</strong>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。</p>
+                    <ul >
+                        <center><p class="title-font">企业核心价值</p></center>
+                        <li style="margin-top: 0;"><a href="corporateCulture.html#value" >激&nbsp;&nbsp;&nbsp;&nbsp;情</a></li>
 
-                    <p style="color: #cacaca;padding-top: 10px;"><strong>价值:</strong>海德在线是一个有共同目标，共同价值观的社会团体，如何衡量个人对于海德在线的价值，取决于每个人对于这个"社会"的贡献度。</p>
+                        <li ><a href="corporateCulture.html#value" >创&nbsp;&nbsp;&nbsp;&nbsp;新</a></li>
+
+                        <li ><a href="corporateCulture.html#value" >价&nbsp;&nbsp;&nbsp;&nbsp;值</a></li>
+                    </ul>
                 </div>
                 <div class="section-two">
                     <ul>
@@ -471,13 +490,8 @@
                 <div class="section-two">
                     <ul>
                         <center><p class="title-font">合作洽谈</p></center>
-                        <li><a href="cooperate.html#headquarters">海德在线</a></li>
+                        <li><a href="cooperate.html#headquarters">联系我们</a></li>
                         <li><a href="cooperate.html#talentJoin">招贤纳士</a></li>
-                        <li><a href="cooperate.html#operation">运行推广中心</a></li>
-                        <li><a href="cooperate.html#business" >商务拓展中心</a></li>
-                        <li><a href="cooperate.html#supplyChain" >供应链管理中心</a></li>
-                        <li><a href="cooperate.html#shenzhenBranch">深圳分公司</a></li>
-                        <li><a href="cooperate.html#guangzhou">广州分公司</a></li>
                     </ul>
                 </div>
             </div>

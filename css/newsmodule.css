@@ -74,10 +74,10 @@
     height: 50px;
     text-decoration: none;
     font-size: 18px;
-    color: #2C3E50;
+    color: #000000;
 }
 .nav-bar a:hover {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 .company-tab {

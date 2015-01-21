@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>海德在线</title>
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="Libs/bootstrap/dist/css/bootstrap.css">
@@ -42,7 +42,11 @@
     </style>
 </head>
 <body>
-<div class="global-fluid" style="background: #eaeaea;">
+
+<div class="global-fluid" style="background: #eaeaea;height: 170px;">
+    <!--<div class="global-bar">-->
+        <!--<div class="lore"></div>-->
+    <!--</div>-->
     <div class="had-container">
         <div class="global-nav">
             <div class="hadlink-logo"><a href="index.html"><img src="images/hadlinkLOGO.png"></a> </div>
@@ -50,7 +54,7 @@
                 <ul class="nav-bar">
                     <li><a  href="index.html" id="firstPage">首页</a> </li>
                     <li>
-                        <a style="font-size: 18px;color: #2C3E50; " href="companyInfo.html#companyIntro" id="copanyInfo">公司信息</a>
+                        <a style="font-size: 18px;color: #2C3E50; " href="companyInfo.html" id="copanyInfo">公司信息</a>
                         <ul class="sub-nav"  style="height: 205px;">
                             <li><a href="companyInfo.html#companyIntro"> 公司介绍</a></li>
                             <li> <a href="companyInfo.html#president" >总裁寄语</a></li>
@@ -99,7 +103,7 @@
                             <!--<li ><a href="investor.html#companyother" >其他动态</a></li>-->
                         </ul>
                     </li>
-                    <li >
+                    <li class="bottom-active">
                         <a href="cooperate.html" id="cooperation">合作洽谈</a>
                         <ul class="sub-nav" style="height: 90px;">
                             <li id="navheadquarters"  ><a href="cooperate.html#headquarters" > 联系我们</a></li>
@@ -122,7 +126,7 @@
         </ul>
     </div>
     <!--联系我们-->
-    <div id="headquarters" class="section-commen div-center" style="height: 900px;">
+    <div id="headquarters" class="section-commen div-center" style="height: 1020px;">
         <div><img src="images/cooperate.png"></div>
         <h3 style="color: #ffa54a;margin-top: 50px;">联系我们</h3>
         <address>
@@ -142,7 +146,7 @@
                 <strong>http://weibo.com/u/5322200438?from=myfollow_all</strong>
             </p>
         </address>
-        <div style="width:500px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+        <div style="width:600px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
 
     </div>
 
@@ -273,11 +277,14 @@
         <div class="global-footer">
             <div class="had-container">
                 <div class="section-one">
-                    <center><p class="title-font">企业核心价值</p></center>
-                    <p style="color: #cacaca;"><strong >激情:</strong><font style="color: #cacaca;" >它具有魔力与吸引力，吸引着无数的人去爆发、爆发、爆发、爆发这激情。</font></p>
-                    <p style="color: #cacaca; padding-top: 10px;"><strong>创新:</strong>一种永不满足的追求，它的本质是突破，它的目标是创造更大价值。</p>
+                    <ul >
+                        <center><p class="title-font">企业核心价值</p></center>
+                        <li style="margin-top: 0;"><a href="corporateCulture.html#value" >激&nbsp;&nbsp;&nbsp;&nbsp;情</a></li>
 
-                    <p style="color: #cacaca;padding-top: 10px;"><strong>价值:</strong>海德在线是一个有共同目标，共同价值观的社会团体，如何衡量个人对于海德在线的价值，取决于每个人对于这个"社会"的贡献度。</p>
+                        <li ><a href="corporateCulture.html#value" >创&nbsp;&nbsp;&nbsp;&nbsp;新</a></li>
+
+                        <li ><a href="corporateCulture.html#value" >价&nbsp;&nbsp;&nbsp;&nbsp;值</a></li>
+                    </ul>
                 </div>
                 <div class="section-two">
                     <ul>
@@ -323,13 +330,8 @@
                 <div class="section-two">
                     <ul>
                         <center><p class="title-font">合作洽谈</p></center>
-                        <li><a href="cooperate.html#headquarters">海德在线</a></li>
+                        <li><a href="cooperate.html#headquarters">联系我们</a></li>
                         <li><a href="cooperate.html#talentJoin">招贤纳士</a></li>
-                        <li><a href="cooperate.html#operation">运行推广中心</a></li>
-                        <li><a href="cooperate.html#business" >商务拓展中心</a></li>
-                        <li><a href="cooperate.html#supplyChain" >供应链管理中心</a></li>
-                        <li><a href="cooperate.html#shenzhenBranch">深圳分公司</a></li>
-                        <li><a href="cooperate.html#guangzhou">广州分公司</a></li>
                     </ul>
                 </div>
             </div>
@@ -340,7 +342,7 @@
         </div>
     </div>
 </div>
-<div id="slideup" title="返回顶部" class="slideup"></div>
+<div id="slideup" title="返回顶部" class="slideup"><img src="images/backtop.png"></div>
 <script src="Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=kU0Gfwli5aoHG09bxkrZa5LC"></script>
 <script>
@@ -353,9 +355,19 @@
             }, 300);
             return false;
         })
-
+        function setValue(Element,num){
+            Element.each(function(){
+                var id = $(this).data('id');
+                if(id == num){
+                    $(this).css({'color':'#ffa54a','font-size':'20px'});
+                    $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
+                    $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
+                    return false;
+                }
+            })
+        }
         $(window).scroll(function(){
-            var top = $(document).scrollTop()
+            var top = $(document).scrollTop();
             if(top >= 150){
                 $('.coor-nav').css('top','0');
                 slideup.fadeIn(300);
@@ -364,17 +376,7 @@
                 slideup.fadeOut(300);
             }
             var a = $('.coor-nav').find('a');
-            function setValue(Element,num){
-                Element.each(function(){
-                    var id = $(this).data('id');
-                    if(id == num){
-                        $(this).css({'color':'#ffa54a','font-size':'20px'});
-                        $(this).parent().next().find('a').css({'color':'#000','font-size':'14px'});
-                        $(this).parent().prev().find('a').css({'color':'#000','font-size':'14px'});
-                        return false;
-                    }
-                })
-            }
+
             if(top >200){
                 setValue(a,1);
             }
@@ -413,7 +415,7 @@
     }
     function createMap(){
         map = new BMap.Map("map");
-        map.centerAndZoom(new BMap.Point(113.939508,22.548246),15);
+        map.centerAndZoom(new BMap.Point(113.942176,22.550206),15);
     }
     function setMapEvent(){
         map.enableScrollWheelZoom();
@@ -428,7 +430,7 @@
     }
     function addMapOverlay(){
         var markers = [
-            {content:"我的备注",title:"深圳市海德在线有限公司",imageOffset: {width:0,height:3},position:{lat:22.548312,lng:113.939724}}
+            {content:"我的备注",title:"深圳市海德在线有限公司",imageOffset: {width:0,height:3},position:{lat:22.54822,lng:113.939355}}
         ];
         for(var index = 0; index < markers.length; index++ ){
             var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
@@ -449,10 +451,10 @@
     }
     //向地图添加控件
     function addMapControl(){
-        var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_LEFT});
         scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
         map.addControl(scaleControl);
-        var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:0});
         map.addControl(navControl);
         var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
         map.addControl(overviewControl);
