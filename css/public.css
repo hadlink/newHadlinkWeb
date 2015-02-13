@@ -25,6 +25,13 @@ body {
     text-align: left;
     float: left;
 }
+.footer-copyright a {
+    color:#dcdcdc;
+}
+.footer-copyright a:hover {
+    color:  #ffffff;
+    text-decoration: none;
+}
 .section-one li {
     width: 120px;
     list-style: none;
@@ -86,7 +93,7 @@ body {
 /* index css file */
 .alert-window {
     width: 1000px;
-    height:600px;
+    height:500px;
     position: fixed;
     top: 170px;
     background: #808080;
@@ -255,7 +262,7 @@ body {
 .section-commen .person-show {
     width: 250px;
     height: 350px;
-    /*margin-left: 20px;*/
+    margin-left: 30px;
     float: left;
     margin-top: 40px;
 
@@ -339,11 +346,14 @@ body {
     /*height: 81px;*/
     opacity: 0.8;
 }
-.omit {
-    color:#3498DB;
+.alert-window {
+    color:#ffa54a;
+    font-size: 12px;
+    width: 34px;
+    height: 25px;
 }
 .omit:hover {
-    background: #ffa54a;
+    background: wheat;
     cursor: pointer;
 }
 .shrink {

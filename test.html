@@ -5,19 +5,1068 @@
     <title></title>
     <script type="text/javascript" src="Libs/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script>
-        $(function(){
-            var arr = [1,2,3,4];
-            function isRepeat(arr){
-                var hash = {};
-                for(var i in arr) {
-                    if(hash[arr[i]])
-                        return true;
-                    hash[arr[i]] = true;
+    $(function(){
+        var report ={
+            scoreBefore:0,
+            scoreAfter:0,
+            statusBefore:'',//1(正常),2,3,4（严重）
+            statusAfter:'',
+            systems: [
+                {
+                    name:"driverSystem",
+                    chName:"行驶系统",
+                    subSystem:[
+                        {
+                            name:"tireAbrasion",
+                            chName:"胎压磨损程度",
+                            parts:[
+                                {
+                                    name:"leftFrontTire",
+                                    chName:"左前胎",
+                                    score:0.75,
+                                    damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontTire",
+                                    chName:"右前胎",
+                                    score:0.75,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackTire",
+                                    chName:"右后胎",
+                                    score:0.75,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter: 1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackTire",
+                                    chName:"左后胎",
+                                    score:0.75,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"airCock",
+                            chName:"气嘴状态",
+                            parts:[
+                                {
+                                    name:"leftFrontTire",
+                                    chName:"左前胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontTire",
+                                    chName:"右前胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackTire",
+                                    chName:"左后胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackTire",
+                                    chName:"右后胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"tirePressure",
+                            chName:"胎压",
+                            parts:[
+                                {
+                                    name:"leftFrontTire",
+                                    chName:"左前胎",
+                                    score:1,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontTire",
+                                    chName:"右前胎",
+                                    score:1,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackTire",
+                                    chName:"左后胎",
+                                    score:1,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackTire",
+                                    chName:"右后胎",
+                                    score:1,
+                                    damageLevelBefore: 1,  //4(正常),1,2,3（严重）
+                                    damageLevelAfter:1,    //4(正常),1,2,3（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"reserveTirePressure",
+                            chName:"备胎气压",
+                            score:1,
+                            damageLevelBefore: 1,
+                            damageLevelAfter:1,
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//1 分3 6 0
+                        {
+                            name:"carCarryCheckTools",//reserve
+                            chName:"随车工具检查",
+                            parts:[
+                                {
+                                    name:"jack",
+                                    chName:"千斤顶",
+                                    exist: 0,//0（无）1（有）
+                                    score: 0.6
+                                },
+                                {
+                                    name:"warningSign",
+                                    chName:"警示牌",
+                                    exist:0,//0（无）1（有）
+                                    score: 0.6
+                                },
+                                {
+                                    name:"extinguisher",
+                                    chName:"灭火器",
+                                    exist:0,//0（无）1（有）
+                                    score: 0.6
+                                },
+                                {
+                                    name:"wheelWrench",
+                                    chName:"螺栓扳手",
+                                    exist:0,//0（无）1（有）
+                                    score: 0.6
+                                },
+                                {
+                                    name:"spareTire",
+                                    chName:"备胎",
+                                    exist:0,//0（无）1（有）
+                                    score: 0.6
+                                }
+                            ]
+                        },//5
+                        {
+                            name:"tireTorsionCheck",//reserve
+                            chName:"轮胎扭力检查",
+                            score:1,
+                            damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                            damageLevelAfter:1, //1(正常),2,3,4（严重）
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        }//1 分3 6 0
+                    ]
+                },
+                {
+                    name:"lightSystem",
+                    chName:"灯光系统",
+                    subSystem:[
+                        {
+                            name:"widthLamp",
+                            chName:"示宽灯",
+                            parts:[
+                                {
+                                    name:"leftFrontLight",
+                                    chName:"左前",
+                                    score:0.5,
+                                    damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontLight",
+                                    chName:"右前",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackLight",
+                                    chName:"右后",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackLight",
+                                    chName:"左后",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"turnLight",
+                            chName:"转向灯",
+                            parts:[
+                                {
+                                    name:"leftFrontLight",
+                                    chName:"左前",
+                                    score:0.5,
+                                    damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontLight",
+                                    chName:"右前",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackLight",
+                                    chName:"右后",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackLight",
+                                    chName:"左后",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"dangerLight",
+                            chName:"危险信号灯",
+                            parts:[
+                                {
+                                    name:"leftFrontLight",
+                                    chName:"左前",
+                                    score:0.5,
+                                    damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontLight",
+                                    chName:"右前",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackLight",
+                                    chName:"右后",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackLight",
+                                    chName:"左后",
+                                    score:0.5,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },//four
+                        {
+                            name:"stopLight",
+                            chName:"刹车灯",
+                            score:2,
+                            damageLevelBefore: 1, //1,0
+                            damageLevelAfter:1, //1,0
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"dippedHeadLight",
+                            chName:"近光灯",
+                            parts:[
+                                {
+                                    name:"rightLight",
+                                    chName:"右",
+                                    score:1,
+                                    damageLevelBefore: 1, //1正常 0有问题
+                                    damageLevelAfter:1,   //1正常 0有问题
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftLight",
+                                    chName:"左",
+                                    score:1,
+                                    damageLevelBefore: 1,  //1正常 0有问题
+                                    damageLevelAfter:1,   //1正常 0有问题
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"beanLight",
+                            chName:"远光灯",
+                            parts:[
+                                {
+                                    name:"rightLight",
+                                    chName:"右",
+                                    score:1,
+                                    damageLevelBefore: 1,  //1正常 0有问题
+                                    damageLevelAfter:1,   //1正常 0有问题
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftLight",
+                                    chName:"左",
+                                    score:1,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },//2
+                        {
+                            name:"licenseLamp",
+                            chName:"牌照灯",
+                            score:1,
+                            damageLevelBefore: 1, //1,2
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//1 0 或者1
+                    ]
+                },
+                {
+                    name:'brakeSystem',
+                    chName:'制动系统',
+                    subSystem:[
+                        {
+                            name:"arresterDepth",
+                            chName:"制动片厚度",
+                            parts:[
+                                {
+                                    name:"leftFrontLight",
+                                    chName:"左前胎",
+                                    score:1.25,
+                                    damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontTire",
+                                    chName:"右前胎",
+                                    score:1.25,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackTire",
+                                    chName:"右后胎",
+                                    score:1.25,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackTire",
+                                    chName:"左后胎",
+                                    score:1.25,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"arresterFlatness",
+                            chName:"制动片不平整",
+                            parts:[
+                                {
+                                    name:"leftFrontLight",
+                                    chName:"左前胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightFrontTire",
+                                    chName:"右前胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"rightBackTire",
+                                    chName:"右后胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"leftBackTire",
+                                    chName:"左后胎",
+                                    score:0.25,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },//4
+                        {
+                            name:"arresterFluid",
+                            chName:"制动夜含水性",
+                            score:4,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//1 分3 6 0
+                    ]
+                },
+                {
+                    name:'airConditioningSystem',
+                    chName:"空调系统",
+                    subSystem:[
+                        {
+                            name:"refrigeration",
+                            chName:"制冷",
+                            score:2,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        }, //3，6，0
+                        {
+                            name:"Heating",
+                            chName:"制热",
+                            score:1,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2，3，4(严重）
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//3，6，0
+                        {
+                            name:"peculiarSmell",
+                            chName:"空调异味",
+                            score:1.5,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//3，6，0
+                        {
+                            name:"airConditionerFilter",
+                            chName:"空调滤清器",
+                            score:1,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//3，6，0
+                    ]
+                },
+                {
+                    name:'powerSystem',
+                    chName:'动力系统',
+                    subSystem:[
+                        {
+                            name:"lubricationSystem",
+                            chName:"润滑系统",
+                            score:5,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"engineCoolantIcePoint",
+                            chName:"发动机冷却液冰点",
+                            score:2,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2，3，4(严重）
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"engineCoolantLiquidLevel",
+                            chName:"发动机冷却液液位",
+                            score:2,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"engineCoolantLeakage",
+                            chName:"发动机冷却液泄漏",
+                            score:5,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"helpPowerOilLiquidLevel",
+                            chName:"助力油液位",
+                            score:2,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"fuelOilSystemLeakage",
+                            chName:"燃油系统泄漏",
+                            score:5,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"airConditionFilter",
+                            chName:"空气滤清器",
+                            score:1,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"transmissionOilLeakage",
+                            chName:"变速器油泄漏",
+                            score:4,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"transmissionBeltTightness",
+                            chName:"传动皮带松紧度",
+                            score:2,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"accumulatorCurrentStartVoltage",
+                            chName:"蓄电池电流和启动电压",
+                            score:5,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        }
+                    ]
+                },
+                {
+                    name:'trafficComputerControlSystem',
+                    chName:'行车电脑控制系统',
+                    subSystem:[
+                        {
+                            name:"engineControlSystem",
+                            chName:"发动机控制系统",
+                            score:3,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"transmissionControlSystems",
+                            chName:"变速箱控制系统",
+                            score:2,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2，3，4(严重）
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"ABS",
+                            chName:"防抱死制动系统",
+                            score:3,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"airbagSystem",
+                            chName:"安全气囊系统",
+                            score:3,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"bodyControlModule",
+                            chName:"车身控制系统",
+                            score:3,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"airConditionControlSystem",
+                            chName:"空调控制系统",
+                            score:3,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"securityAndControlSystem",
+                            chName:"防盗集中控制系统",
+                            score:3,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },
+                        {
+                            name:"TPMSSystem",
+                            chName:"胎压监控系统",
+                            score:2,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        }
+                    ]
+                },
+                {
+                    name:'cleanSystem',
+                    chName:'清洗系统',
+                    subSystem:[
+                        {
+                            name:"windscreenWiper",
+                            chName:"雨刮器清洗系统",
+                            parts:[
+                                {
+                                    name:"frontWindscreenWiper",
+                                    chName:"前雨刮器",
+                                    score:0.75,
+                                    damageLevelBefore: 1, //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                },
+                                {
+                                    name:"backWindscreenWiper",
+                                    chName:"后雨刮器",
+                                    score:0.75,
+                                    damageLevelBefore: 1,  //1(正常),2,3,4（严重）
+                                    damageLevelAfter:1,   //1(正常),2,3,4（严重）
+                                    testResult:"检测结果",
+                                    situation:"现状",
+                                    suggestion:""  //可为空
+                                }
+                            ]
+                        },
+                        {
+                            name:"headlightCleaningSystem",
+                            chName:"大灯清洗系统",
+                            score:1,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2，3，4(严重）
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//分 3 6 0
+                        {
+                            name:"wiperFluidLevel",
+                            chName:"雨刮液液位",
+                            score:1,
+                            damageLevelBefore: 1, //1,2，3，4(严重）
+                            damageLevelAfter:1, //1,2
+                            testResult:"检测结果",
+                            situation:"现状",
+                            suggestion:""  //可为空
+                        },//分 3 6 0
+                    ]
                 }
-                return false;
+            ]
+        }
+        var count = {
+            scoreBefore:report.scoreBefore,
+            scoreAfter:report.scoreAfter,
+            statusBefore:report.scoreBefore,
+            statusAfter:report.scoreAfter,
+            arrOne:[],
+            arrFour:[],
+            countScore:function(object){
+                $.each(object,function(i,v){
+                    var before = v.damageLevelBefore;
+                    var after = v.damageLevelAfter;
+                    var score = v.score;
+                    if(before == 1){
+                        count.scoreBefore += score;
+                    }
+                    if(before == 2){
+                        count.scoreBefore += score*0.7;
+                    }
+                    if(before == 3){
+                        count.scoreBefore += score*0.4;
+                    }
+                    if(before == 4 || before == 0){
+                        count.scoreBefore += 0;
+                    }
+                    //体检之后
+                    if(after == 1){
+                        count.scoreAfter += score;
+                    }
+                    if(after == 2){
+                        count.scoreAfter += score*0.7;
+                    }
+                    if(after == 3){
+                        count.scoreAfter += score*0.4;
+                    }
+                    if(after == 4 || before == 0){
+                        count.scoreAfter += 0;
+                    }
+                })
+            },
+            loop:function(array){
+                $.each(array,function(i,v){
+                    count.arrOne.push(v)
+                })
+            },
+            ergodic:function(array){
+                $.each(array,function(i,v){
+                    count.countScore(v);
+                })
+            },
+            execute:function(){
+                var d1 = report.systems[0].subSystem[0].parts;
+                var d2 = report.systems[0].subSystem[1].parts;
+                var d3 = report.systems[0].subSystem[2].parts;
+                var d5 = report.systems[0].subSystem[4].parts;//随车工具
+                $.each(d5,function(i,v){
+                    if(v.exist == 0){
+                        count.scoreBefore += 0;
+                        count.scoreAfter += 0;
+                    }else{
+                        count.scoreBefore += 0.6;
+                        count.scoreAfter += 0.6;
+                    }
+                })
+                var d5 = report.systems[0].subSystem[4].parts;//随车工具
+                $.each(d5,function(i,v){
+                    if(v.exist == 0){
+                        count.scoreBefore += 0;
+                        count.scoreAfter += 0;
+                    }else{
+                        count.scoreBefore += 0.6;
+                        count.scoreAfter += 0.6;
+                    }
+                })
+                var d6 = report.systems[0].subSystem[5];//轮胎扭力
+                var d4 = report.systems[0].subSystem[3];//备胎
+                //灯光系统 7项
+                var l1 = report.systems[1].subSystem[0].parts;
+                var l2 = report.systems[1].subSystem[1].parts;
+                var l3 = report.systems[1].subSystem[2].parts;
+                var l4 = report.systems[1].subSystem[3];//刹车灯
+                var l5 = report.systems[1].subSystem[4].parts;
+                var l6 = report.systems[1].subSystem[5].parts;
+                var l7 = report.systems[1].subSystem[6];//牌照灯
+
+                //制动系统 3项
+                var b1 = report.systems[2].subSystem[0].parts;
+                var b2 = report.systems[2].subSystem[1].parts;
+                var b3 = report.systems[2].subSystem[2];
+
+                //空调系统 4项
+                var air = report.systems[3].subSystem;
+
+                //动力系统 10项
+                var power = report.systems[4].subSystem;
+
+                //行车电脑系统
+                var computer = report.systems[5].subSystem;
+
+                //清洗系统 3项
+                var c1 = report.systems[6].subSystem[0].parts;
+                var c2 = report.systems[6].subSystem[1];
+                var c3 = report.systems[6].subSystem[2];
+
+                count.arrFour.push(d1,d2,d3,l1,l2,l3,l4,l5,l6,b1,b2,b3);
+                count.arrOne.push(d4,d6,l4,l7,b3,c2,c3);
+                count.loop(computer);
+                count.loop(air);
+                count.loop(power);
+                count.loop(c1);
+                count.ergodic(count.arrFour);
+                count.countScore(count.arrOne);
+                report.scoreBefore = count.scoreBefore;
+                report.scoreAfter = count.scoreAfter;
+//                return ('体检前:'+count.scoreBefore+'体检后'+count.scoreAfter);
             }
-            console.log(isRepeat(arr));
+        };
+        count.execute();
+        function count(){
+            var scoreBefore = 0;//体检之前
+            var scoreAfter = 0;//体检之前
+            var arrOne = [];
+            var d1 = report.systems[0].subSystem[0].parts;
+            var d2 = report.systems[0].subSystem[1].parts;
+            var d3 = report.systems[0].subSystem[2].parts;
+            function countScore(object){
+                $.each(object,function(i,v){
+                    var before = v.damageLevelBefore;
+                    var after = v.damageLevelAfter;
+                    var score = v.score;
+                    if(before == 1){
+                        scoreBefore += score;
+                    }
+                    if(before == 2){
+                        scoreBefore += score*0.7;
+                    }
+                    if(before == 3){
+                        scoreBefore += score*0.4;
+                    }
+                    if(before == 4 || before == 0){
+                        scoreBefore += 0;
+                    }
+                    //体检之后
+                    if(after == 1){
+                        scoreAfter += score;
+                    }
+                    if(after == 2){
+                        scoreAfter += score*0.7;
+                    }
+                    if(after == 3){
+                        scoreAfter += score*0.4;
+                    }
+                    if(after == 4 || before == 0){
+                        scoreAfter += 0;
+                    }
+                })
+            }
+            function loop(array){
+                $.each(array,function(i,v){
+                    arrOne.push(v)
+                })
+            }
+            countScore(d1);
+            countScore(d2);
+            countScore(d3);//行驶系统前三项
+            var d5 = report.systems[0].subSystem[4].parts;//随车工具
+            $.each(d5,function(i,v){
+                if(v.exist == 0){
+                    scoreBefore += 0;
+                    scoreAfter += 0;
+                }else{
+                    scoreBefore += 0.6;
+                    scoreAfter += 0.6;
+                }
+            })
+            var d6 = report.systems[0].subSystem[5];//轮胎扭力
+            var d4 = report.systems[0].subSystem[3];//备胎
+            //灯光系统 7项
+            var l1 = report.systems[1].subSystem[0].parts;
+            var l2 = report.systems[1].subSystem[1].parts;
+            var l3 = report.systems[1].subSystem[2].parts;
+            var l4 = report.systems[1].subSystem[3];//刹车灯
+            var l5 = report.systems[1].subSystem[4].parts;
+            var l6 = report.systems[1].subSystem[5].parts;
+            var l7 = report.systems[1].subSystem[6];//牌照灯
+            countScore(l1);
+            countScore(l2);
+            countScore(l3);
+            countScore(l5);
+            countScore(l6);//灯光系统前6项
+            //制动系统 3项
+            var b1 = report.systems[2].subSystem[0].parts;
+            var b2 = report.systems[2].subSystem[1].parts;
+            var b3 = report.systems[2].subSystem[2];
+            countScore(b1);
+            countScore(b2);
+            //空调系统 4项
+            var air = report.systems[3].subSystem;
+            loop(air);
+            //动力系统 10项
+            var power = report.systems[4].subSystem;
+            loop(power)
+            //行车电脑系统
+            var computer = report.systems[5].subSystem;
+            loop(computer)
+            //清洗系统 3项
+            var c1 = report.systems[6].subSystem[0].parts;
+            var c2 = report.systems[6].subSystem[1];
+            var c3 = report.systems[6].subSystem[2];
+            loop(c1);
+            arrOne.push(d4,d6,l4,l7,b3,c2,c3);
+            countScore(arrOne);
+            return ('体检前:'+scoreBefore+'体检后'+scoreAfter);
+        }
+        var data = {
+            'name':'aa',//SADSDASDAS
+            'sex':'xxxx'
+        }
+        var arr = [1,2,3]
+//        console.log(data.name)
+        $.each(data,function(i,v){
+            console.log(v)
         })
+
+        var a = {
+            name:'xx',
+            sex:1
+        }
+        function isNull(str){
+            if(typeof(str) == 'undefined'){
+                   return 'xxx';
+            }
+            return str;
+        }
+
+         console.log(isNull(a.a));
+
+
+    })
+
     </script>
 </head>
 <body>
