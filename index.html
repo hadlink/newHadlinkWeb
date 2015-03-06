@@ -12,37 +12,75 @@
     <script type="text/javascript" src="Libs/jquery/1.9.1/jquery-1.9.1.js"></script>
     <script>
         $(function(){
-            $('#container').find('.view').mouseover(function(){
+            var height  =window.pageYOffset;
+            if(height > 0){
+                $('body,html').animate({scrollTop:0},170);
+            };
+
+            $('#container').find('.view').mouseover(function () {
                 $(this).addClass("active");
             });
-            $('#container').find('.view').mouseout(function(){
+            $('#container').find('.view').mouseout(function () {
                 $(this).removeClass("active");
-            })
+            });
             var close = $('#close');
             var windowInfo = $('#windowInfo');
-            var upAdBanner = function(){
+            var st;
+            var scroll=function(e){
+                clearTimeout(st);
+                st=setTimeout(function(){
+                    window.scrollTo(loc.scrollLeft,loc.scrollTop);
+                },5);
+            };
+            window.onscroll=scroll;
+            var upAdBanner = function () {
                 windowInfo.slideUp(500);
                 close.slideUp(500);
-                $("body").css("overflow","scroll");
+               $("body").css("overflow", "scroll");
             };
-            var downBanner = function(){
+            var downBanner = function () {
                 windowInfo.slideDown(500);
                 close.slideDown(500);
-                $("body").css("overflow","hidden")
-            }
+                $("body").css("overflow", "hidden")
+            };
             downBanner();
-            setTimeout(upAdBanner,4000);
+            setTimeout(upAdBanner, 3000);
             var top = $(document).scrollTop();
-
-            $(window).scroll(function(){
-                if(top >10){
-                    windowInfo.css('top','220px');
-                }
-            })
-            close.on('click',function(){
+            close.on('click', function () {
                 windowInfo.hide();
                 $(this).hide();
-            })
+            });
+//            $('#container').find('.view').mouseover(function(){
+//                $(this).addClass("active");
+//            });
+//            $('#container').find('.view').mouseout(function(){
+//                $(this).removeClass("active");
+//            })
+//            var close = $('#close');
+//            var windowInfo = $('#windowInfo');
+//            var upAdBanner = function(){
+//                windowInfo.slideUp(500);
+//                close.slideUp(500);
+//                $("body").css("overflow","scroll");
+//            };
+//            var downBanner = function(){
+//                windowInfo.slideDown(500);
+//                close.slideDown(500);
+//                $("body").css("overflow","hidden")
+//            }
+//            downBanner();
+//            setTimeout(upAdBanner,4000);
+//            var top = $(document).scrollTop();
+//
+//            $(window).scroll(function(){
+//                if(top >10){
+//                    windowInfo.css('top','220px');
+//                }
+//            })
+//            close.on('click',function(){
+//                windowInfo.hide();
+//                $(this).hide();
+//            })
         })
     </script>
 </head>
@@ -68,14 +106,15 @@
         </div>
     </div>
 </div>
-
+<!--<button id="close" type="button" class="btn btn-lg" style="position: absolute;margin-left: 1010px;">-->
+    <!--<span class="glyphicon glyphicon-remove"></span>-->
+<!--</button>-->
+<div id="windowInfo" class="alert-window">
+    <a href="http://www.ikaibei.com"  ><img src="images/index01.png" alt="" height="740" width="100%" ></a>
+</div>
 <div id="container" class="had-container"   style="min-height: 740px;">
-    <button id="close" type="button" class="btn btn-lg" style="position: absolute;margin-left: 1010px;">
-        <span class="glyphicon glyphicon-remove"></span>
-    </button>
-    <div id="windowInfo" class="alert-window">
-        <a href="productRename.html"> <img src="images/shouye.jpg" alt="" ></a>
-    </div>
+
+
     <div class="about-us m-top-1 view"><a href="companyInfo.html#companyIntro"><img src="images/aboutus.png"></a></div>
     <div class="latest-news m-top-2 view"><a href="news.html#companyNews"><img src="images/latest.png"></a></div>
     <div class="industry m-top-3 view" ><a href="news.html#industryInformation"><img src="images/industry.png"></a></div>
